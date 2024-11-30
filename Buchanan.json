@@ -1,0 +1,7 @@
+{
+	"acc": "ZDoom\\acc.exe",
+	"common": "ZDoom\\acc",
+	"iwad": "",
+	"zdoom": "ZDoom\\zdoom.exe",
+	"output": "Output"
+}

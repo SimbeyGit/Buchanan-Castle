@@ -1,0 +1,57 @@
+function LoadModule (strModule)
+{
+	try
+		return Host.LoadQuadoo(strModule);
+	catch
+		return Host.LoadQuadoo("Modules\\" + strModule);
+}
+
+function main ()
+{
+	var oRoot = Host.OpenFolder();
+	var oConfig = JSONParse(Host.ReadTextFile("Buchanan.json"));
+
+	if(isempty(oConfig.iwad))
+	{
+		var oShell = LoadModule("QSShell.dll");
+		var oOpenFile = oShell.CreateFileDialog();
+
+		oOpenFile.Title = "Pick Doom IWAD File";
+		oOpenFile.Filter = "IWAD (*.wad)\0*.wad\0";
+		if(!oOpenFile.Open(Host.Windows.GetDesktopWindow()))
+			return -1;
+
+		oConfig.iwad = oOpenFile.Files[0];
+	}
+
+	if(!oRoot.IsFolder(oConfig.output))
+		oRoot.CreateFolder(oConfig.output);
+
+	var oOutput = oRoot.OpenFolder(oConfig.output);
+	if(!oOutput.IsFile("Buchanan.pk3"))
+	{
+		var strQVM = Host.NativeModule;
+		strQVM = left(strQVM, strrchr(strQVM, '\\') + 1) + "QVM.exe";
+
+		var oBuild = Host.CreateProcess(strQVM, "Build.quadoo", (string)oRoot);
+		oBuild.Wait();
+
+		var nExitCode = oBuild.GetExitCode();
+		if(0 != nExitCode)
+		{
+			Host.MessageBox(Host.Windows.GetDesktopWindow(), "Could not build Buchanan.pk3, exit code: " + nExitCode, "Build Failure", 0x10);
+			return nExitCode;
+		}
+	}
+
+	var strZDoom = oConfig.zdoom;
+	if(isempty(strZDoom))
+	{
+		Host.MessageBox(Host.Windows.GetDesktopWindow(), "The ZDoom path is not configured!", "Configuration Error", 0x10);
+		return -1;
+	}
+
+	var oZDoom = Host.CreateProcess(strZDoom, "-iwad \"" + oConfig.iwad + "\" -file \"" + oOutput.GetPathOf("Buchanan.pk3") + "\"", (string)oRoot);
+	oZDoom.Wait();
+	return oZDoom.GetExitCode();
+}
