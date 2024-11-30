@@ -2,7 +2,7 @@ clearepisodes
 
 gameinfo
 {
-	windowTitle = "Escape from Castle Buchanan"
+	windowTitle = "Escape from Buchanan Castle"
 	titlemusic = "TITLEMUS"
 }
 
