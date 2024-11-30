@@ -140,6 +140,7 @@ Script "A_AlertActors" (int WakeTID)
 
 Script "A_DeathScream" (void)
 {
+	SetResultValue(false);
 }
 
 Script "A_Drop" (int DropIndex, int Angle, int nUnused)

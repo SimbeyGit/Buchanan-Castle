@@ -471,7 +471,7 @@ ACTOR CastleEnemy
 	+DONTGIB
 	+FIXMAPTHINGPOS
 	BloodColor "FF 00 00"
-	DamageFactor "WolfNazi", 0.0
+	DamageFactor "CastleDamage", 0.0
 	States
 	{
 		Raise:
@@ -659,6 +659,7 @@ ACTOR BritishHomeGuard : CastleSoldierTemplate 20002
 	//SeeSound "bhgs/sight"
 	//DeathSound "bhgs/death"
 	SeeSound "grunt/sight"
+	PainSound "grunt/pain"
 	DeathSound "grunt/death"
 	Obituary "$DTH_BHGS"
 	States
