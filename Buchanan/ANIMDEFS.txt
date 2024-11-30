@@ -1,0 +1,4 @@
+//Elevator Switch
+switch doom 1 ELVRDOWN
+on sound switches/elevator
+pic ELVRUP tics 0

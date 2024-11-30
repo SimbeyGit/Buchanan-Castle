@@ -1,0 +1,127 @@
+[
+	{
+		id: 2001,
+		name: "Shotgun",
+		directional: false
+	},
+	{
+		id: 82,
+		name: "Super Shotgun",
+		directional: false
+	},
+	{
+		id: 2002,
+		name: "Chaingun",
+		directional: false
+	},
+	{
+		id: 2003,
+		name: "Rocket Launcher",
+		directional: false
+	},
+	{
+		id: 2004,
+		name: "Plasma Rifle",
+		directional: false
+	},
+	{
+		id: 2006,
+		name: "BFG9000",
+		directional: false
+	},
+	{
+		id: 2008,
+		name: "Shotgun Shells",
+		directional: false
+	},
+	{
+		id: 2048,
+		name: "Box of Bullets",
+		directional: false
+	},
+	{
+		id: 2046,
+		name: "Box of Rockets",
+		directional: false
+	},
+	{
+		id: 2049,
+		name: "Box of Shotgun Shells",
+		directional: false
+	},
+	{
+		id: 2007,
+		name: "Clip",
+		directional: false
+	},
+	{
+		id: 2047,
+		name: "Cell",
+		directional: false
+	},
+	{
+		id: 17,
+		name: "Energy Cell Pack",
+		directional: false
+	},
+	{
+		id: 2010,
+		name: "Rocket",
+		directional: false
+	},
+	{
+		id: 2015,
+		name: "Armor Bonus",
+		directional: false
+	},
+	{
+		id: 2014,
+		name: "Health Bonus",
+		directional: false
+	},
+	{
+		id: 2018,
+		name: "Armor",
+		directional: false
+	},
+	{
+		id: 8,
+		name: "Backpack",
+		directional: false
+	},
+	{
+		id: 2012,
+		name: "Medikit",
+		directional: false
+	},
+	{
+		id: 2019,
+		name: "Mega Armor",
+		directional: false
+	},
+	{
+		id: 3002,
+		name: "Demon",
+		directional: true
+	},
+	{
+		id: 3001,
+		name: "Imp",
+		directional: true
+	},
+	{
+		id: 3004,
+		name: "Zombie",
+		directional: true
+	},
+	{
+		id: 9,
+		name: "Shotgun Guy",
+		directional: true
+	},
+	{
+		id: 3005,
+		name: "Cacodemon",
+		directional: true
+	}
+]

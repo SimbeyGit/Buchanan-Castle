@@ -1,0 +1,27 @@
+door/open			DOOROPEN
+door/close			DOORCLOS
+door/secret			DOORSCRT
+
+switches/elevator		ELEVATOR
+
+pickups/food			P_FOOD
+pickups/key			P_KEY
+pickups/mgun			P_MGUN
+pickups/cgun			P_CGUN
+
+weapons/wmachinegun		WSND0004
+
+shots/burst			WSND0011
+shots/single			WSND0021
+
+dog/sight			WSND0001
+dog/attack			WSND0029
+dog/death			WSND0016
+
+//bhgs/sight			WSND0000
+
+//bhgs/die1			WSND0012
+//bhgs/die2			WSND0013
+//bhgs/die3			WSND0014
+
+//$random bhgs/death		{ bhgs/die1 bhgs/die2 bhgs/die3 }

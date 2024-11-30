@@ -1,0 +1,6 @@
+#library "scripts"
+#include "zcommon.acs"
+
+script "enter_script" ENTER
+{
+}

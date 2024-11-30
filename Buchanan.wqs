@@ -51,7 +51,7 @@ function main ()
 		return -1;
 	}
 
-	var oZDoom = Host.CreateProcess(strZDoom, "-iwad \"" + oConfig.iwad + "\" -file \"" + oOutput.GetPathOf("Buchanan.pk3") + "\"", (string)oRoot);
+	var oZDoom = Host.CreateProcess(oRoot.GetPathOf(strZDoom), "-iwad \"" + oConfig.iwad + "\" -file \"" + oOutput.GetPathOf("Buchanan.pk3") + "\"", (string)oRoot);
 	oZDoom.Wait();
 	return oZDoom.GetExitCode();
 }
