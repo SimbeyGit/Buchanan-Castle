@@ -18,22 +18,110 @@ map E1L1 "Floor 1"
 {
 	music = GETTHEM
 	next = E1L2
-	par = 90
+	par = 100
 	levelnum = 1
 	interpic = INTERPIC
 	intermusic = ENDLEVEL
 	cluster = 1
 }
 
-map E1L2 "Floor 2"
+map E1L2 "Floor 2"	// Secret Exit
 {
 	music = SEARCHN
 	next = E1L3
+	secretnext = E1L0
 	par = 120
 	levelnum = 2
 	interpic = INTERPIC
 	intermusic = "ENDLEVEL"
-	cluster = 2
+	cluster = 1
+}
+
+map E1L3 "Floor 3"
+{
+	music = POW
+	next = E1L4
+	par = 120
+	levelnum = 3
+	interpic = INTERPIC
+	intermusic = "ENDLEVEL"
+	cluster = 1
+}
+
+map E1L4 "Floor 4"
+{
+	music = SUSPENSE
+	next = E1L5
+	par = 210
+	levelnum = 4
+	interpic = INTERPIC
+	intermusic = "ENDLEVEL"
+	cluster = 1
+}
+
+map E1L5 "Floor 5"
+{
+	music = GETTHEM
+	next = E1L6
+	par = 180
+	levelnum = 5
+	interpic = INTERPIC
+	intermusic = "ENDLEVEL"
+	cluster = 1
+}
+
+map E1L6 "Floor 6"
+{
+	music = SEARCHN
+	next = E1L7
+	par = 180
+	levelnum = 6
+	interpic = INTERPIC
+	intermusic = "ENDLEVEL"
+	cluster = 1
+}
+
+map E1L7 "Floor 7"
+{
+	music = POW
+	next = E1L8
+	par = 150
+	levelnum = 7
+	interpic = INTERPIC
+	intermusic = "ENDLEVEL"
+	cluster = 1
+}
+
+map E1L8 "Floor 8"
+{
+	music = SUSPENSE
+	next = E1L9
+	par = 150
+	levelnum = 8
+	interpic = INTERPIC
+	intermusic = "ENDLEVEL"
+	cluster = 1
+}
+
+map E1L9 "Floor 9"
+{
+	music = WARMARCH
+	par = 0
+	levelnum = 9
+	interpic = INTERPIC
+	intermusic = "ENDLEVEL"
+	cluster = 1
+}
+
+map E1L0 "Secret Floor"
+{
+	music = CORNER
+	next = E1L3
+	par = 0
+	levelnum = 10
+	interpic = INTERPIC
+	intermusic = "ENDLEVEL"
+	cluster = 1
 }
 
 cluster 1

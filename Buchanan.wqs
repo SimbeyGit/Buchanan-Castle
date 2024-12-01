@@ -6,7 +6,7 @@ function LoadModule (strModule)
 		return Host.LoadQuadoo("Modules\\" + strModule);
 }
 
-function main ()
+function WinMain (strCmdLine, nCmdShow)
 {
 	var oRoot = Host.OpenFolder();
 	var oConfig = JSONParse(Host.ReadTextFile("Buchanan.json"));
@@ -51,7 +51,16 @@ function main ()
 		return -1;
 	}
 
-	var oZDoom = Host.CreateProcess(oRoot.GetPathOf(strZDoom), "-iwad \"" + oConfig.iwad + "\" -file \"" + oOutput.GetPathOf("Buchanan.pk3") + "\"", (string)oRoot);
+	var strRunCmd = "-iwad \"" + oConfig.iwad + "\" -file \"" + oOutput.GetPathOf("Buchanan.pk3") + "\"";
+
+	var idxArgs = instr(strCmdLine, "-args");
+	if(0 <= idxArgs)
+	{
+		idxArgs += 5;
+		strRunCmd += right(strCmdLine, len(strCmdLine) - idxArgs);
+	}
+
+	var oZDoom = Host.CreateProcess(oRoot.GetPathOf(strZDoom), strRunCmd, (string)oRoot);
 	oZDoom.Wait();
 	return oZDoom.GetExitCode();
 }
