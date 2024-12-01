@@ -365,6 +365,22 @@ ACTOR BlueKey : CastleKey 21044
 	}
 }
 
+ACTOR RedKey : CastleKey 21045
+{
+	Inventory.PickupSound "pickups/key"
+	Inventory.PickupMessage "$PU_RKEY"
+	//Inventory.Icon "RKEY"
+	States
+	{
+		Pickup:
+			KEYS C 0 A_GiveInventory("RedCard")
+			Stop
+		Static:
+			KEYS C -1
+			Stop
+	}
+}
+
 ACTOR CastleWeapon : Weapon
 {
 	States

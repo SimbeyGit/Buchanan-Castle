@@ -18,6 +18,7 @@ Sprite Optional CAG2A0, 64, 64 {Offset 32, 64 Graphic WSPR0020, 0, 0}
 Sprite Optional POB1A0, 64, 64 {Offset 32, 64 Graphic WSPR0021, 0, 0}
 Sprite Optional KEYSA0, 64, 64 {Offset 32, 64 Graphic WSPR0022, 0, 0}
 Sprite Optional KEYSB0, 64, 64 {Offset 32, 64 Graphic WSPR0023, 0, 0}
+Sprite Optional KEYSC0, 64, 64 {Offset 32, 64 Graphic WSPR0024, 0, 0}
 Sprite Optional HLTHC0, 64, 64 {Offset 32, 64 Graphic WSPR0008, 0, 0}
 Sprite Optional HLTHD0, 64, 64 {Offset 32, 64 Graphic WSPR0026, 0, 0}
 Sprite Optional BAR2A0, 64, 64 {Offset 32, 64 Graphic WSPR0037, 0, 0}

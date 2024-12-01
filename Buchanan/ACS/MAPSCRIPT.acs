@@ -56,6 +56,16 @@ script 1 (int po, int dir, int lock)
 				polyinfo[index] = FALSE;
 			}
 		}
+		else if(lock == 3)
+		{
+			if(!checkinventory("RedCard"))
+			{
+				if(GetCvar("show_messages"))
+					print(s: "\cAThis door requires the ruby key");
+				bAccess = 0;
+				polyinfo[index] = FALSE;
+			}
+		}
 
 		if(bAccess == 1)
 		{
