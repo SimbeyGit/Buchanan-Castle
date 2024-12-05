@@ -248,6 +248,16 @@ ACTOR Bones : BaseDecoration 21042
 	}
 }
 
+ACTOR DeadGuard : BaseDecoration 21124
+{
+	States
+	{
+		Static:
+			BHGS N -1
+			Stop
+	}
+}
+
 ACTOR DogFood : BaseHealth 21029
 {
 	+AUTOACTIVATE
