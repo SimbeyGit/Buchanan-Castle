@@ -4,12 +4,15 @@ door/secret			DOORSCRT
 
 switches/elevator		ELEVATOR
 
+truck/idle			DSTRUCK
+
 pickups/food			P_FOOD
 pickups/key			P_KEY
 pickups/mgun			P_MGUN
 pickups/cgun			P_CGUN
 
 weapons/wmachinegun		WSND0004
+weapons/wchaingun		WSND0006
 
 shots/burst			WSND0011
 shots/single			WSND0021

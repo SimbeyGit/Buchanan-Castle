@@ -28,12 +28,21 @@ Sprite Optional SPEAA0, 64, 64 {Offset 32, 64 Graphic WSPR0048, 0, 0}
 Sprite Optional VINEA0, 64, 64 {Offset 32, 64 Graphic WSPR0049, 0, 0}
 
 Sprite Optional MGUNP0, 64, 64 {Offset 32, 64 Graphic WSPR0029, 0, 0}
+Sprite Optional CGUNP0, 64, 64 {Offset 32, 64 Graphic WSPR0030, 0, 0}
+
+Sprite Optional WTRKA0, 64, 64 {Offset 32, 64 Graphic WSPR1052, 0, 0}
 
 Sprite Optional MGUNB0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0426, 0, 0}
 Sprite Optional MGUNC0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0427, 0, 0}
 Sprite Optional MGUND0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0428, 0, 0}
 Sprite Optional MGUNE0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0429, 0, 0}
 Sprite Optional MGUNW0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0430, 0, 0}
+
+Sprite Optional CGUNA0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0431, 0, 0}
+Sprite Optional CGUNB0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0432, 0, 0}
+Sprite Optional CGUNC0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0433, 0, 0}
+Sprite Optional CGUND0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0434, 0, 0}
+Sprite Optional CGUNE0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0435, 0, 0}
 
 Sprite Optional WDOGA1, 64, 64 {Offset 32, 64 Graphic WSPR0099, 0, 0}
 Sprite Optional WDOGA2, 64, 64 {Offset 32, 64 Graphic WSPR0100, 0, 0}

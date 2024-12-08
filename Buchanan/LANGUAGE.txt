@@ -9,4 +9,7 @@ PU_BKEY = "Silver Key";
 PU_RKEY = "Ruby Key";
 
 PU_MGUN = "Machine Gun";
+PU_CGUN = "Chaingun";
+
 TAG_MGUN = "Machine Gun";
+TAG_CGUN = "Chaingun";

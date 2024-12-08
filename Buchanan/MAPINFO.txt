@@ -22,6 +22,7 @@ map E1L1 "Floor 1"
 	levelnum = 1
 	interpic = INTERPIC
 	intermusic = ENDLEVEL
+	sky1 = "SKY1"
 	cluster = 1
 }
 
@@ -34,6 +35,7 @@ map E1L2 "Floor 2"	// Secret Exit
 	levelnum = 2
 	interpic = INTERPIC
 	intermusic = "ENDLEVEL"
+	sky1 = "SKY1"
 	cluster = 1
 }
 
@@ -45,6 +47,7 @@ map E1L3 "Floor 3"
 	levelnum = 3
 	interpic = INTERPIC
 	intermusic = "ENDLEVEL"
+	sky1 = "SKY1"
 	cluster = 1
 }
 
@@ -56,6 +59,7 @@ map E1L4 "Floor 4"
 	levelnum = 4
 	interpic = INTERPIC
 	intermusic = "ENDLEVEL"
+	sky1 = "SKY1"
 	cluster = 1
 }
 
@@ -67,6 +71,7 @@ map E1L5 "Floor 5"
 	levelnum = 5
 	interpic = INTERPIC
 	intermusic = "ENDLEVEL"
+	sky1 = "SKY1"
 	cluster = 1
 }
 
@@ -78,6 +83,7 @@ map E1L6 "Floor 6"
 	levelnum = 6
 	interpic = INTERPIC
 	intermusic = "ENDLEVEL"
+	sky1 = "SKY1"
 	cluster = 1
 }
 
@@ -89,6 +95,7 @@ map E1L7 "Floor 7"
 	levelnum = 7
 	interpic = INTERPIC
 	intermusic = "ENDLEVEL"
+	sky1 = "SKY1"
 	cluster = 1
 }
 
@@ -100,6 +107,7 @@ map E1L8 "Floor 8"
 	levelnum = 8
 	interpic = INTERPIC
 	intermusic = "ENDLEVEL"
+	sky1 = "SKY1"
 	cluster = 1
 }
 
@@ -110,6 +118,7 @@ map E1L9 "Floor 9"
 	levelnum = 9
 	interpic = INTERPIC
 	intermusic = "ENDLEVEL"
+	sky1 = "SKY1"
 	cluster = 1
 }
 
@@ -121,6 +130,7 @@ map E1L0 "Secret Floor"
 	levelnum = 10
 	interpic = INTERPIC
 	intermusic = "ENDLEVEL"
+	sky1 = "SKY1"
 	cluster = 1
 }
 
