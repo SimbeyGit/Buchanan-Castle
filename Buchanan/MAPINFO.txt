@@ -114,6 +114,11 @@ map E1L8 "Floor 8"
 map E1L9 "Floor 9"
 {
 	music = WARMARCH
+	next = EndGame
+	{
+		pic = "ENDING1"
+		music = TITLEMUS
+	}
 	par = 0
 	levelnum = 9
 	interpic = INTERPIC
@@ -136,7 +141,7 @@ map E1L0 "Secret Floor"
 
 cluster 1
 {
-	flat = WOODWAL0
+	flat = CEIL5
 	music = WONDERIN
 	entertext = "In an attempt to secure peace, Rudolf Hess",
 		"embarked on a solo mission to Scotland on",
@@ -153,4 +158,14 @@ cluster 1
 		"Rudolf Hess escape Buchanan Castle and",
 		"prevent the west from descending into",
 		"Eternal Darkness?"
+	exittext = "Having put down Bernard Montgomery and",
+		"escaped from Buchanan Castle, it is clear",
+		"what you must do. Peace negotiations were",
+		"never an option.",
+		"",
+		"You quickly commandeer an automobile and",
+		"begin driving to London. You're going",
+		"straight to the source of this war.",
+		"",
+		"Winston Churchill must die!"
 }
