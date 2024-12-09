@@ -95,8 +95,23 @@
 		directional: false
 	},
 	{
+		id: 2011,
+		name: "Stimpack",
+		directional: false
+	},
+	{
 		id: 2019,
 		name: "Mega Armor",
+		directional: false
+	},
+	{
+		id: 2013,
+		name: "Soul Sphere",
+		directional: false
+	},
+	{
+		id: 83,
+		name: "Megasphere",
 		directional: false
 	},
 	{
