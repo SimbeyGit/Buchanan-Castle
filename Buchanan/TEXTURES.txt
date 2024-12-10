@@ -133,3 +133,5 @@ Sprite Optional BHGSN0, 64, 64 {Offset 32, 64 Graphic BHGS0095, 0, 0}
 Sprite Optional BHGSG0, 64, 64 {Offset 32, 64 Graphic BHGS0096, 0, 0}
 Sprite Optional BHGSH0, 64, 64 {Offset 32, 64 Graphic BHGS0097, 0, 0}
 Sprite Optional BHGSI0, 64, 64 {Offset 32, 64 Graphic BHGS0098, 0, 0}
+
+Sprite Optional BERNA0, 64, 64 {Offset 32, 64 Graphic WSPR0296, 0, 0}

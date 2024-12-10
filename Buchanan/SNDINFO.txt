@@ -17,6 +17,8 @@ weapons/wchaingun		WSND0006
 shots/burst			WSND0011
 shots/single			WSND0021
 
+boss/attack			WSND0010
+
 dog/sight			WSND0001
 dog/attack			WSND0029
 dog/death			WSND0016

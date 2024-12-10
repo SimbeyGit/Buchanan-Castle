@@ -158,3 +158,8 @@ Script "A_Drop" (int DropIndex, int Angle, int nUnused)
 	// TODO - As other enemies are added, adjust this logic to spawn items based on what the player has.
 	Spawn("Clip", GetActorX(0)+1, GetActorY(0)+1, GetActorZ(0), 0, Angle);
 }
+
+Script "A_GetSkill" (void)
+{
+	SetResultValue(GameSkill());
+}
