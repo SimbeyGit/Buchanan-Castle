@@ -163,3 +163,21 @@ Script "A_GetSkill" (void)
 {
 	SetResultValue(GameSkill());
 }
+
+Script "A_PatrolTurn" (int angle, int TurnX, int TurnY)
+{
+	SetActivatorToTarget(0);
+
+	if(PlayerNumber() == -1 && ActivatorTID() < 500 && !CheckInventory("Active"))
+	{
+		if(GetActorProperty(0, APROP_Health) > 0)
+		{
+			SetActorState(0, "Spawn.Stand");
+			Thing_Stop(0);
+
+			SetActorPosition(0, TurnX * 1.0, TurnY * 1.0, 0, 0);
+			SetActorAngle (0, (angle * 256 / 360) << 8);
+			SetActorState(0, "Spawn.Patrol");
+		}
+	}
+}

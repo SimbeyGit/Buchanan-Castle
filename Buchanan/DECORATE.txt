@@ -894,3 +894,97 @@ ACTOR BernardMontgomeryEasy : CastleBossBernardTemplate
 ACTOR BernardMontgomeryNormal : BernardMontgomeryEasy {Health 950}
 ACTOR BernardMontgomeryMedium : BernardMontgomeryEasy {Health 1050}
 ACTOR BernardMontgomeryHard : BernardMontgomeryEasy {Health 1200}
+
+//Patrol turn points
+ACTOR Turn : SwitchableDecoration 22090
+{
+	Mass 10000
+	Radius 0
+	Height 1
+	+Shootable
+	+BumpSpecial
+	+NOTONAUTOMAP
+	Activation THINGSPEC_Activate | THINGSPEC_TriggerActs | THINGSPEC_MonsterTrigger | THINGSPEC_ThingTargets | THINGSPEC_Switch
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		Wait
+	Inactive:
+	Active:
+		TNT1 A 10
+		TNT1 A 35 ACS_NamedExecuteAlways("A_PatrolTurn", 0, angle, x, y)
+		TNT1 A 70
+		Wait
+	}
+}
+
+ACTOR Turn45 : Turn 22091
+{
+	States
+	{
+	Spawn:
+		TNT1 A 1 A_SetAngle (45)
+		Wait
+	}
+}
+
+ACTOR Turn90 : Turn 22092
+{
+	States
+	{
+	Spawn:
+		TNT1 A 1 A_SetAngle (90)
+		Wait
+	}
+}
+
+ACTOR Turn135 : Turn 22093
+{
+	States
+	{
+	Spawn:
+		TNT1 A 1 A_SetAngle (135)
+		Wait
+	}
+}
+
+ACTOR Turn180 : Turn 22094
+{
+	States
+	{
+	Spawn:
+		TNT1 A 1 A_SetAngle (180)
+		Wait
+	}
+}
+
+ACTOR Turn225 : Turn 22095
+{
+	States
+	{
+	Spawn:
+		TNT1 A 1 A_SetAngle (225)
+		Wait
+	}
+}
+
+ACTOR Turn270 : Turn 22096
+{
+	States
+	{
+	Spawn:
+		TNT1 A 1 A_SetAngle (270)
+		Wait
+	}
+}
+
+ACTOR Turn315 : Turn 22097
+{
+	States
+	{
+	Spawn:
+		TNT1 A 1 A_SetAngle (315)
+		Wait
+	}
+}
