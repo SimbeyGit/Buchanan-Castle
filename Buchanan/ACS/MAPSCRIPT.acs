@@ -157,13 +157,18 @@ Script "A_Drop" (int DropIndex, int Angle, int nUnused)
 {
 	str strDropItem = "Clip";
 
+	// Record the coordinates before calling SetActivatorToPlayer().
+	int x = GetActorX(0)+1;
+	int y = GetActorY(0)+1;
+	int z = GetActorZ(0);
+
 	// TODO - As other enemies are added, adjust this logic to spawn items based on what the player has.
 	switch(DropIndex)
 	{
 	case 0:
 		break;
 	case 1:
-		if(!CheckInventory("CastleMachineGun"))
+		if(PlayerCount() != 1 || !SetActivatorToPlayer(0) || !CheckInventory("CastleMachineGun"))
 			strDropItem = "CastleMachineGun";
 		break;
 	case 2:
@@ -171,7 +176,7 @@ Script "A_Drop" (int DropIndex, int Angle, int nUnused)
 		break;
 	}
 
-	Spawn(strDropItem, GetActorX(0)+1, GetActorY(0)+1, GetActorZ(0), 0, Angle);
+	Spawn(strDropItem, x, y, z, 0, Angle);
 }
 
 Script "A_GetSkill" (void)

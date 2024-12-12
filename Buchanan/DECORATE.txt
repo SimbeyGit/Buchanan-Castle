@@ -617,74 +617,6 @@ ACTOR CastleBoss : CastleEnemy
 	}
 }
 
-ACTOR CastleSoldierTemplate : CastleEnemy
-{
-	Health 25
-	Speed 3
-	States
-	{
-	Spawn:
-		UNKN A 0
-	Spawn.Stand:
-		"####" EEEEEE 4 A_LookEx (0, 0, 0, 2048, 0, "See")
-		Loop
-	Spawn.PatrolNoClip:
-		"####" A 0 A_JumpIf(angle % 90 == 0, "TurnAround")
-		"####" A 6 A_Warp(AAPTR_DEFAULT, 45, 0, 0, 0, WARPF_STOP | WARPF_INTERPOLATE, "Spawn.Patrol")
-		"####" A 6 A_Warp(AAPTR_DEFAULT, 90, 0, 0, 0, WARPF_STOP | WARPF_INTERPOLATE, "Spawn.Patrol")
-	TurnAround:
-		"####" E 10
-		"####" EEE 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
-		"####" A 0 A_JumpIf((velx != 0) || (vely != 0), "Spawn.Patrol")
-		"####" E 10
-		"####" EEE 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
-		"####" A 0 A_JumpIf((velx != 0) || (vely != 0), "Spawn.Patrol")
-		"####" A 0 A_SetAngle(angle + 180)
-	Spawn.Patrol:
-		"####" AAA 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
-		"####" AAA 1 A_LookEx (0, 0, 0, 2048, 0, "See")
-		"####" BBBBBB 1 A_LookEx (0, 0, 0, 2048, 0, "See")
-		"####" CCC 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
-		"####" CCC 1 A_LookEx (0, 0, 0, 2048, 0, "See")
-		"####" DDDDDD 1 A_LookEx (0, 0, 0, 2048, 0, "See")
-		"####" A 0 A_JumpIf((velx == 0) && (vely == 0), "Spawn.PatrolNoClip")
-		Loop
-	Chase:
-		"####" AAAAA 1 A_Chase
-		"####" A 1
-		"####" BBBB 1 A_Chase
-		"####" CCCCC 1 A_Chase
-		"####" CC 1
-		"####" DDDD 1 A_Chase
-		Goto See
-	Missile:
-		"####" # 0 A_Stop
-		"####" GH 10 A_FaceTarget
-		"####" I 8 BRIGHT A_WolfAttack(0, "shots/single", 1.0, 64, 64, 2, 4, 160.0)
-		Goto Chase
-	Pain:
-		"####" A 0 A_JumpIf(health % 1, "Pain.Alt")
-		"####" F 5 A_Pain
-		Goto Chase
-	Pain.Alt:
-		"####" J 5 A_Pain
-		Goto Chase
-	Pain:
-		"####" F 6 A_Pain
-		Goto Chase
-	Death:
-		"####" A 0 ACS_NamedExecuteAlways ("A_Drop", 0, 0, 0, user_lost)
-		"####" A 0 A_JumpIf(CallACS("A_DeathScream"), 2)
-		"####" A 0 A_Scream
-		"####" K 7
-		"####" L 8
-		"####" M 7 A_GiveToTarget("Points", 100)
-	Dead:
-		"####" N -1
-		Stop
-	}
-}
-
 ACTOR CastleDogTemplate : CastleEnemy
 {
 	Health 5
@@ -757,6 +689,145 @@ ACTOR CastleDogTemplate : CastleEnemy
 	}
 }
 
+ACTOR CastleGuardTemplate : CastleEnemy
+{
+	Health 25
+	Speed 3
+	States
+	{
+	Spawn:
+		UNKN A 0
+	Spawn.Stand:
+		"####" EEEEEE 4 A_LookEx (0, 0, 0, 2048, 0, "See")
+		Loop
+	Spawn.PatrolNoClip:
+		"####" A 0 A_JumpIf(angle % 90 == 0, "TurnAround")
+		"####" A 6 A_Warp(AAPTR_DEFAULT, 45, 0, 0, 0, WARPF_STOP | WARPF_INTERPOLATE, "Spawn.Patrol")
+		"####" A 6 A_Warp(AAPTR_DEFAULT, 90, 0, 0, 0, WARPF_STOP | WARPF_INTERPOLATE, "Spawn.Patrol")
+	TurnAround:
+		"####" E 10
+		"####" EEE 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
+		"####" A 0 A_JumpIf((velx != 0) || (vely != 0), "Spawn.Patrol")
+		"####" E 10
+		"####" EEE 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
+		"####" A 0 A_JumpIf((velx != 0) || (vely != 0), "Spawn.Patrol")
+		"####" A 0 A_SetAngle(angle + 180)
+	Spawn.Patrol:
+		"####" AAA 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
+		"####" AAA 1 A_LookEx (0, 0, 0, 2048, 0, "See")
+		"####" BBBBBB 1 A_LookEx (0, 0, 0, 2048, 0, "See")
+		"####" CCC 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
+		"####" CCC 1 A_LookEx (0, 0, 0, 2048, 0, "See")
+		"####" DDDDDD 1 A_LookEx (0, 0, 0, 2048, 0, "See")
+		"####" A 0 A_JumpIf((velx == 0) && (vely == 0), "Spawn.PatrolNoClip")
+		Loop
+	Chase:
+		"####" AAAAA 1 A_Chase
+		"####" A 1
+		"####" BBBB 1 A_Chase
+		"####" CCCCC 1 A_Chase
+		"####" CC 1
+		"####" DDDD 1 A_Chase
+		Goto See
+	Missile:
+		"####" # 0 A_Stop
+		"####" GH 10 A_FaceTarget
+		"####" I 8 BRIGHT A_WolfAttack(0, "shots/single", 1.0, 64, 64, 2, 4, 160.0)
+		Goto Chase
+	Pain:
+		"####" A 0 A_JumpIf(health % 1, "Pain.Alt")
+		"####" F 5 A_Pain
+		Goto Chase
+	Pain.Alt:
+		"####" J 5 A_Pain
+		Goto Chase
+	Pain:
+		"####" F 6 A_Pain
+		Goto Chase
+	Death:
+		"####" A 0 ACS_NamedExecuteAlways ("A_Drop", 0, 0, 0, user_lost)
+		"####" A 0 A_JumpIf(CallACS("A_DeathScream"), 2)
+		"####" A 0 A_Scream
+		"####" K 7
+		"####" L 8
+		"####" M 7 A_GiveToTarget("Points", 100)
+	Dead:
+		"####" N -1
+		Stop
+	}
+}
+
+ACTOR PoliceTemplate : CastleEnemy
+{
+	Health 100
+	Speed 4
+	States
+	{
+	Spawn:
+		UNKN A 0
+	Spawn.Stand:
+		"####" EEEEEE 4 A_LookEx (0, 0, 0, 2048, 0, "See")
+		Loop
+	Spawn.PatrolNoClip:
+		"####" A 0 A_JumpIf(angle % 90 == 0, "TurnAround")
+		"####" A 6 A_Warp(AAPTR_DEFAULT, 45, 0, 0, 0, WARPF_STOP | WARPF_INTERPOLATE, "Spawn.Patrol")
+		"####" A 6 A_Warp(AAPTR_DEFAULT, 90, 0, 0, 0, WARPF_STOP | WARPF_INTERPOLATE, "Spawn.Patrol")
+	TurnAround:
+		"####" E 10
+		"####" EEE 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
+		"####" A 0 A_JumpIf((velx != 0) || (vely != 0), "Spawn.Patrol")
+		"####" E 10
+		"####" EEE 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
+		"####" A 0 A_JumpIf((velx != 0) || (vely != 0), "Spawn.Patrol")
+		"####" A 0 A_SetAngle(angle + 180)
+	Spawn.Patrol:
+		"####" AAA 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
+		"####" AAA 1 A_LookEx (0, 0, 0, 2048, 0, "See")
+		"####" BBBBBB 1 A_LookEx (0, 0, 0, 2048, 0, "See")
+		"####" CCC 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
+		"####" CCC 1 A_LookEx (0, 0, 0, 2048, 0, "See")
+		"####" DDDDDD 1 A_LookEx (0, 0, 0, 2048, 0, "See")
+		"####" A 0 A_JumpIf((velx == 0) && (vely == 0), "Spawn.PatrolNoClip")
+		Loop
+	Chase:
+		"####" AAAAA 1 A_Chase
+		"####" A 1
+		"####" BBBB 1 A_Chase
+		"####" CCCCC 1 A_Chase
+		"####" CC 1
+		"####" DDDD 1 A_Chase
+		Loop
+	Missile:
+		"####" # 0 A_Stop
+		"####" GH 10 A_FaceTarget
+		"####" I 5 BRIGHT A_WolfAttack(0, "shots/burst", 0.666, 64, 64, 2, 4, 160.0)
+		"####" H 5 A_FaceTarget
+		"####" I 5 BRIGHT A_WolfAttack(0, "shots/burst", 0.666, 64, 64, 2, 4, 160.0)
+		"####" H 5 A_FaceTarget
+		"####" I 5 BRIGHT A_WolfAttack(0, "shots/burst", 0.666, 64, 64, 2, 4, 160.0)
+		"####" H 5 A_FaceTarget
+		"####" I 5 BRIGHT A_WolfAttack(0, "shots/burst", 0.666, 64, 64, 2, 4, 160.0)
+		Goto Chase
+	Pain:
+		"####" A 0 A_JumpIf(health % 1, "Pain.Alt")
+		"####" F 5 A_Pain
+		Goto Chase
+	Pain.Alt:
+		"####" J 5 A_Pain
+		Goto Chase
+	Death:
+		"####" A 0 ACS_NamedExecuteAlways("A_Drop", 0, 1, 0, user_lost)
+		"####" A 0 A_JumpIf(CallACS("A_DeathScream"), 2)
+		"####" A 0 A_Scream
+		"####" K 7
+		"####" L 8
+		"####" M 7 A_GiveToTarget("Points", 500)
+	Dead:
+		"####" N -1 
+		Stop
+	}
+}
+
 ACTOR Alsatian : CastleDogTemplate 20201
 {
 	SeeSound "dog/sight"
@@ -771,14 +842,14 @@ ACTOR Alsatian : CastleDogTemplate 20201
 	}
 }
 
-ACTOR BritishHomeGuard : CastleSoldierTemplate 20002
+ACTOR BritishHomeGuard : CastleGuardTemplate 20002
 {
-	//SeeSound "bhgs/sight"
-	//DeathSound "bhgs/death"
+	//SeeSound "guard/sight"
+	//DeathSound "guard/death"
 	SeeSound "grunt/sight"
 	PainSound "grunt/pain"
 	DeathSound "grunt/death"
-	Obituary "$DTH_BHGS"
+	Obituary "$DTH_GUARD"
 	States
 	{
 	Spawn:
@@ -794,6 +865,33 @@ ACTOR MBritishHomeGuard : BritishHomeGuard 20202
 	{
 	Spawn:
 		BHGS A 0
+		Goto Spawn.Patrol
+	}
+}
+
+ACTOR RoyalMilitaryPolice : PoliceTemplate 20003
+{
+	//SeeSound "police/sight"
+	//DeathSound "police/death"
+	SeeSound "grunt/sight"
+	PainSound "grunt/pain"
+	DeathSound "grunt/death"
+	Obituary "$DTH_POLICE"
+	States
+	{
+	Spawn:
+		RMPS A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR MRoyalMilitaryPolice : RoyalMilitaryPolice 20203
+{
+	+JUSTHIT
+	States
+	{
+	Spawn:
+		RMPS A 0
 		Goto Spawn.Patrol
 	}
 }

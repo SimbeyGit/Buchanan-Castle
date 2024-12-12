@@ -412,7 +412,7 @@ special
 	-123:BeginDBTransaction(0),
 	-124:EndDBTransaction(0),
 	-125:GetDBEntries(1),
-	
+
 	// -1xx are reserved for Zandronum
 	-200:CheckClass(1),
 	-201:DamageActor(6), // [arookas]
@@ -428,8 +428,9 @@ special
 	-211:StartSlideshow(1),
 	-212:GetSectorHealth(2),
 	-213:GetLineHealth(1),
-	
-	
+
+	-250:SetActivatorToPlayer(1),	// Buchanan Castle mod enhancement
+
 	// Eternity's
 	-300:GetLineX(3),
 	-301:GetLineY(3),
