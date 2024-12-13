@@ -113,11 +113,11 @@ map E1L8 "Floor 8"
 
 map E1L9 "Floor 9"
 {
-	music = WARMARCH
+	music = XPUTIT
 	next = EndGame
 	{
 		pic = "ENDING1"
-		music = TITLEMUS
+		music = ERIKA
 	}
 	par = 0
 	levelnum = 9
