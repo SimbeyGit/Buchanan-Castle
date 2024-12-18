@@ -30,3 +30,6 @@ dog/death			WSND0016
 //bhgs/die3			WSND0014
 
 //$random bhgs/death		{ bhgs/die1 bhgs/die2 bhgs/die3 }
+
+bern/sight			BERNARD1
+bern/death			BERNARD2
