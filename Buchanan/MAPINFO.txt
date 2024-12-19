@@ -139,6 +139,18 @@ map E1L0 "Secret Floor"
 	cluster = 1
 }
 
+map E2L0 "Secret Floor"
+{
+	music = PACMAN
+	next = E2L8
+	par = 0
+	levelnum = 20
+	interpic = INTERPIC
+	intermusic = "ENDLEVEL"
+	sky1 = "SKY1"
+	cluster = 1
+}
+
 cluster 1
 {
 	flat = CEIL5

@@ -343,6 +343,28 @@ ACTOR HangingVines : BaseDecoration 21070
 	}
 }
 
+ACTOR BrownColumn : BaseDecoration 21171
+{ 
+	Height 64
+	States
+	{
+	Static:
+		COL2 A -1
+		Stop
+	}
+}
+
+ACTOR PlantLost : BaseDecoration 21231
+{
+	Height 40
+	States
+	{
+	Static:
+		PLT3 A -1
+		Stop
+	}
+}
+
 ACTOR Truck : BaseDecoration 21173
 {
 	Height 64
@@ -1084,5 +1106,84 @@ ACTOR Turn315 : Turn 22097
 	Spawn:
 		TNT1 A 1 A_SetAngle (315)
 		Wait
+	}
+}
+
+ACTOR PacManGhostTemplate : CastleEnemy
+{
+	Radius 32
+	Speed 4
+	Painchance 0
+	+FLOAT
+	+LOWGRAVITY
+	+SPAWNFLOAT
+	+INVULNERABLE
+	+JUSTHIT
+	+LOOKALLAROUND
+	+NOBLOOD
+	- COUNTKILL
+	- CANPUSHWALLS
+	- SOLID
+	SeeSound "ghost/sight"
+	ActiveSound "ghost/active"
+	Obituary "$DTH_PACMAN"
+	MeleeDamage 1
+	States
+	{
+	Spawn:
+		UNKN A 0
+	Spawn.Stand:
+		"####" AAAAABBBBB 1 A_Look
+		Loop
+	Chase:
+		"####" AAAAABBBBB 1 A_Chase
+		Loop
+	Melee:
+		"####" A 0 A_FaceTarget
+		"####" AAAAABBBBB 1 A_MeleeAttack
+		Goto Chase
+	Dead:
+		"####" A -1
+		Loop
+	}
+}
+
+ACTOR Blinky : PacManGhostTemplate 20224 //20020
+{
+	States
+	{
+	Spawn:
+		GHO0 A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR Inky : PacManGhostTemplate 20225 //20021
+{
+	States
+	{
+	Spawn:
+		GHO1 A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR Pinky : PacManGhostTemplate 20226 //20022
+{
+	States
+	{
+	Spawn:
+		GHO2 A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR Clyde : PacManGhostTemplate 20227 //20023
+{
+	States
+	{
+	Spawn:
+		GHO3 A 0
+		Goto Spawn.Stand
 	}
 }
