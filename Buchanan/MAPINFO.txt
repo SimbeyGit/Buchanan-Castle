@@ -3,13 +3,19 @@ clearepisodes
 gameinfo
 {
 	windowTitle = "Escape from Buchanan Castle"
-	titlemusic = "TITLEMUS"
+	titlemusic = "NAZI_NOR"
 }
 
 episode E1L1
 {
-	name = "Escape from Buchanan Castle"
+	name = "Escape from Buchanan"
 	Key = "e"
+}
+
+episode E2L1
+{
+	name = "Peace Negotiations"
+	Key = "p"
 }
 
 // Episode 1
@@ -139,18 +145,6 @@ map E1L0 "Secret Floor"
 	cluster = 1
 }
 
-map E2L0 "Secret Floor"
-{
-	music = PACMAN
-	next = E2L8
-	par = 0
-	levelnum = 20
-	interpic = INTERPIC
-	intermusic = "ENDLEVEL"
-	sky1 = "SKY1"
-	cluster = 1
-}
-
 cluster 1
 {
 	flat = CEIL5
@@ -180,4 +174,152 @@ cluster 1
 		"straight to the source of this war.",
 		"",
 		"Winston Churchill must die!"
+}
+
+// Episode 2
+
+map E2L1 "Floor 1"
+{
+	music = DUNGEON
+	next = E2L2
+	par = 120
+	levelnum = 11
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 2
+}
+
+map E2L2 "Floor 2"
+{
+	music = INTROCW3
+	next = E2L3
+	par = 120
+	levelnum = 12
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 2
+}
+
+map E2L3 "Floor 3"
+{
+	music = XTIPTOE
+	next = E2L4
+	par = 120
+	levelnum = 13
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 2
+}
+
+map E2L4 "Floor 4"
+{
+	music = NAZI_RAP
+	next = E2L5
+	par = 120
+	levelnum = 14
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 2
+}
+
+map E2L5 "Floor 5"
+{
+	music = GOINGAFT
+	next = E2L6
+	par = 120
+	levelnum = 15
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 2
+}
+
+map E2L6 "Floor 6"
+{
+	music = SUSPENSE
+	next = E2L7
+	par = 120
+	levelnum = 16
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 2
+}
+
+map E2L7 "Floor 7"	// Secret Exit
+{
+	music = TWELFTH
+	next = E2L8
+	secretnext = E2L0
+	par = 120
+	levelnum = 17
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 2
+}
+
+map E2L8 "Floor 8"
+{
+	music = ZEROHOUR
+	next = E2L9
+	par = 120
+	levelnum = 18
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 2
+}
+
+map E2L9 "Floor 9"
+{
+	music = FREEDOMA
+	next = EndGame
+	{
+		pic = "ENDING2"
+		music = ERIKA
+	}
+	par = 0
+	levelnum = 19
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 2
+}
+
+map E2L0 "Secret Floor"
+{
+	music = PACMAN
+	next = E2L8
+	par = 0
+	levelnum = 20
+	interpic = INTERPIC
+	intermusic = "ENDLEVEL"
+	sky1 = "SKY1"
+	cluster = 2
+}
+
+cluster 2
+{
+	flat = CEIL5
+	music = JUNGLEA
+	entertext = "After driving under the cover of night,",
+		"you finally reach 10 Downing Street in the",
+		"early hours of the next morning. There",
+		"are service tunnels below England's HQ,",
+		"and you quickly find one of the secret",
+		"entrances and quietly enter without",
+		"being seen.",
+		"",
+		"Having been disavowed by Hitler, you are",
+		"on your own, but you realize you are the",
+		"world's best hope right now. Either you",
+		"succeed, or the world would sink into",
+		"Eternal Darkness.",
+		"",
+		"But for now...  Welcome to the jungle!"
 }
