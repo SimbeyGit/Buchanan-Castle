@@ -100,6 +100,7 @@ function main ()
 
 	var oPackage = oZIP.OpenWriter(oOutput.GetPathOf(strMod + ".pk3"), "new");
 	cbPackaged += PackageFiles(oPackage, "ACS/", oACS, { "scripts.*" });
+	cbPackaged += PackageFiles(oPackage, "ACTORS/", oSource.OpenFolder("ACTORS"), { "*.txt" });
 	cbPackaged += PackageFiles(oPackage, "GRAPHICS/", oSource.OpenFolder("GRAPHICS"), { "*" });
 	cbPackaged += PackageFiles(oPackage, "MAPS/", oSource.OpenFolder("MAPS"), { "*.wad" });
 	cbPackaged += PackageFiles(oPackage, "MUSIC/", oSource.OpenFolder("MUSIC"), { "*" });

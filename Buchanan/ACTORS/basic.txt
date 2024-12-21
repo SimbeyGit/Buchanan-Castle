@@ -1,0 +1,107 @@
+ACTOR Alsatian : CastleDogTemplate 20201
+{
+	SeeSound "dog/sight"
+	AttackSound "dog/attack"
+	DeathSound "dog/death"
+	Obituary "$DTH_DOG"
+	States
+	{
+	Spawn:
+		WDOG A 0
+		Goto Spawn.Patrol
+	}
+}
+
+ACTOR BritishHomeGuard : CastleGuardTemplate 20002
+{
+	//SeeSound "guard/sight"
+	//DeathSound "guard/death"
+	SeeSound "grunt/sight"
+	PainSound "grunt/pain"
+	DeathSound "grunt/death"
+	Obituary "$DTH_GUARD"
+	States
+	{
+	Spawn:
+		BHGS A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR MBritishHomeGuard : BritishHomeGuard 20202
+{
+	+JUSTHIT
+	States
+	{
+	Spawn:
+		BHGS A 0
+		Goto Spawn.Patrol
+	}
+}
+
+ACTOR RoyalMilitaryPolice : PoliceTemplate 20003
+{
+	//SeeSound "police/sight"
+	//DeathSound "police/death"
+	SeeSound "grunt/sight"
+	PainSound "grunt/pain"
+	DeathSound "grunt/death"
+	Obituary "$DTH_POLICE"
+	States
+	{
+	Spawn:
+		RMPS A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR MRoyalMilitaryPolice : RoyalMilitaryPolice 20203
+{
+	+JUSTHIT
+	States
+	{
+	Spawn:
+		RMPS A 0
+		Goto Spawn.Patrol
+	}
+}
+
+ACTOR Blinky : PacManGhostTemplate 20224 //20020
+{
+	States
+	{
+	Spawn:
+		GHO0 A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR Inky : PacManGhostTemplate 20225 //20021
+{
+	States
+	{
+	Spawn:
+		GHO1 A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR Pinky : PacManGhostTemplate 20226 //20022
+{
+	States
+	{
+	Spawn:
+		GHO2 A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR Clyde : PacManGhostTemplate 20227 //20023
+{
+	States
+	{
+	Spawn:
+		GHO3 A 0
+		Goto Spawn.Stand
+	}
+}

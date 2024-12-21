@@ -1,0 +1,146 @@
+ACTOR CastleWeapon : Weapon
+{
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		"####" # 0 ACS_NamedExecuteAlways ("SetMapMarker", 0, 3)
+		"####" # 0 A_Jump (256, "Static")
+	Static:
+		UNKN A -1
+		Stop
+	Deselect:
+		"####" A 1 A_Lower
+		Loop
+	Select:
+		"####" # 0 A_ZoomFactor(1.125)
+		"####" A 1 A_Raise
+		Loop
+	Ready:
+		"####" A 1
+		"####" # 0 A_WeaponReady(WRF_NOBOB)
+		Loop
+	Fire:
+		"####" A 1
+		Goto Ready
+	Refire:
+		"####" # 0  A_Refire
+		"####" # 0 A_Jump (256, "Ready") //Used instead of 'Goto Ready' to allow proper inheritance
+	Hold:
+		"####" A 1
+		"####" # 0 A_JumpIfInventory ("BotPlayer", 1, "Hold.Bot")
+		"####" # 0 A_JumpIfInventory ("PowerStrength", 1, "Hold.Automatic")
+		"####" # 0 A_Jump (256, "Refire")
+	Hold.Bot:
+		"####" A Random (0, 35) //Force delay, but allow refire, otherwise bots are stupid
+	Hold.Automatic:
+		"####" # 0 A_Jump (256, "Fire")
+	}
+}
+
+ACTOR CastleMachineGun : CastleWeapon 21050
+{
+	Weapon.SelectionOrder 2
+	//Inventory.Icon "MGUN"
+	Inventory.PickupSound "pickups/mgun"
+	Inventory.PickupMessage "$PU_MGUN"
+	Weapon.AmmoType "Clip"
+	Weapon.AmmoGive 6
+	Weapon.AmmoUse 1
+	Weapon.YAdjust 8
+	Weapon.SlotNumber 3
+	AttackSound "weapons/wmachinegun"
+	Obituary ""
+	Tag "$TAG_MGUN"
+	States
+	{
+	Static:
+		MGUN P -1
+		Loop
+	Ready:
+		MGUN W 1
+		"####" # 0 A_WeaponReady(WRF_NOBOB)
+		Loop
+	Fire:
+		"####" W 2
+		"####" B 2
+	Hold:
+		"####" W 0
+		"####" # 0 ACS_NamedExecuteAlways("A_NoTarget", 0, 3)
+		"####" # 0 A_JumpIfCloser (128, "Fire.Close")
+		"####" # 0 A_JumpIfCloser (256, "Fire.Medium")
+		"####" # 0 A_JumpIfCloser (ACS_NamedExecuteWithResult("A_Random", 0) / 12, "Fire.Missed")
+	Fire.Medium:
+		"####" C 3 BRIGHT A_FireBullets (3.0, 3.0, 1, ACS_NamedExecuteWithResult("A_Random", 0) / 6, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO)
+		Goto Fire.Resume
+	Fire.Close:
+		"####" C 3 BRIGHT A_FireBullets (3.0, 3.0, 1, ACS_NamedExecuteWithResult("A_Random", 0) / 4, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO)
+		Goto Fire.Resume
+	Fire.Missed:
+		"####" C 3 BRIGHT A_FireBullets (3.0, 3.0, 1, 0, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO)
+	Fire.Resume:
+		"####" D 3
+		"####" D 0 A_ReFire
+		"####" E 3
+		"####" # 0 A_Jump(256, "Ready")
+	}
+}
+
+ACTOR CastleChaingun : CastleWeapon 21051
+{
+	Weapon.SelectionOrder 1
+	//Inventory.Icon "CGUN"
+	Inventory.PickupSound "pickups/cgun"
+	Inventory.PickupMessage "$PU_CGUN"
+	Weapon.AmmoType "Clip"
+	Weapon.AmmoGive 6
+	Weapon.AmmoUse 1
+	Weapon.YAdjust 8
+	Weapon.SlotNumber 4
+	+Weapon.BFG
+	AttackSound "weapons/wchaingun"
+	Obituary ""
+	Tag "$TAG_CGUN"
+	States
+	{
+	Static:
+		CGUN P -1
+		Loop
+	Ready:
+		CGUN A 1
+		"####" # 0 A_WeaponReady(WRF_NOBOB)
+		Loop
+	Select:
+		"####" # 0 A_JumpIfInventory("CastleDualChaingunMarker", 1, "Select.CleanupDualPickup")
+		Goto Select.Normal
+	Select.CleanupDualPickup:
+		"####" # 0 A_TakeInventory("CastleDualChaingunMarker", 1)
+		"####" # 0 A_TakeInventory("CastleDualChaingun", 1)
+	Select.Normal:
+		"####" # 0 A_ZoomFactor(1.125)
+		"####" A 1 A_Raise
+		Loop
+	Fire:
+		"####" AB 2
+		"####" # 0 A_Jump(256, "Hold")
+	Hold:
+		"####" # 0 ACS_NamedExecuteAlways("A_NoTarget", 0, 3)
+		"####" # 0 A_JumpIfCloser (128, "Fire.Close")
+		"####" # 0 A_JumpIfCloser (256, "Fire.Medium")
+		"####" # 0 A_JumpIfCloser (ACS_NamedExecuteWithResult("A_Random", 0) / 12, "Fire.Missed")
+		"####" # 0 A_Jump(256, "Fire.Medium")
+	Fire.Medium:
+		"####" CD 3 BRIGHT A_FireBullets (4.0, 4.0, 1, ACS_NamedExecuteWithResult("A_Random", 0) / 6, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO)
+		"####" # 0 A_Jump(256, "Fire.Resume")
+	Fire.Close:
+		"####" CD 3 BRIGHT A_FireBullets (4.0, 4.0, 1, ACS_NamedExecuteWithResult("A_Random", 0) / 4, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO)
+		"####" # 0 A_Jump(256, "Fire.Resume")
+	Fire.Missed:
+		"####" CD 3 BRIGHT A_FireBullets (4.0, 4.0, 1, 0, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO)
+		"####" # 0 A_Jump(256, "Fire.Resume")
+	Fire.Resume:
+		"####" # 0 A_ReFire
+		"####" E 2
+		"####" # 0 A_Jump(256, "Ready")
+	}
+}

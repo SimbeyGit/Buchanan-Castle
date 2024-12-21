@@ -2,3 +2,9 @@
 switch doom 1 ELVRDOWN
 on sound switches/elevator
 pic ELVRUP tics 0
+
+switch doom 1 METALPN8
+on sound switches/switchon
+pic METALPN9 tics 0
+off sound switches/switchoff
+pic METALPN8 tics 0

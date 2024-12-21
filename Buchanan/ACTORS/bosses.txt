@@ -1,0 +1,51 @@
+ACTOR BernardMontgomery 20214
+{
+	-SOLID
+	+NOSECTOR
+	RenderStyle None
+	States
+	{
+	Spawn:
+		BERN A 0
+		BERN A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 0, "EasySpawn")
+		BERN A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 1, "NormalSpawn")
+		BERN A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 2, "MediumSpawn") 
+		BERN A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 3, "HardSpawn")
+		Stop
+	EasySpawn:
+		BERN A 1 A_SpawnItemEx("BernardMontgomeryEasy")
+		Stop
+	NormalSpawn:
+		BERN A 1 A_SpawnItemEx("BernardMontgomeryNormal")
+		Stop
+	MediumSpawn:
+		BERN A 1 A_SpawnItemEx("BernardMontgomeryMedium")
+		Stop
+	HardSpawn:
+		BERN A 1 A_SpawnItemEx("BernardMontgomeryHard")
+		Stop
+	}
+}
+
+ACTOR BernardMontgomeryEasy : CastleBossBernardTemplate
+{
+	SeeSound "bern/sight"
+	DeathSound "bern/death"
+	Obituary "$DTH_BERN"
+	States
+	{
+	Spawn:
+		BERN A 0
+		Goto Spawn.Stand
+	Missile:
+		"####" E 15 A_FaceTarget
+		"####" F 5 A_FaceTarget
+		"####" GFGFGE 5 BRIGHT A_WolfAttack(0, "boss/attack", 0.666, 64, 64, 2, 4, 160.0)
+		"####" A 0 A_JumpIfCloser(64, "Attack")
+		Goto Walk
+	}
+}
+
+ACTOR BernardMontgomeryNormal : BernardMontgomeryEasy {Health 950}
+ACTOR BernardMontgomeryMedium : BernardMontgomeryEasy {Health 1050}
+ACTOR BernardMontgomeryHard : BernardMontgomeryEasy {Health 1200}
