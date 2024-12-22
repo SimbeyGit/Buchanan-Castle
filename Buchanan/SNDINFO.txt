@@ -55,5 +55,16 @@ $random police/sight		{ police/sight1 police/sight2 police/sight3 }
 $random police/pain		{ police/pain1 police/pain2 police/pain3 }
 $random police/death		{ police/die1 police/die2 police/die3 }
 
+commando/pain1			CMDO0000
+commando/pain2			CMDO0001
+commando/pain3			CMDO0002
+
+commando/die1			CMDO0003
+commando/die2			CMDO0004
+commando/die3			CMDO0005
+
+$random commando/pain		{ commando/pain1 commando/pain2 commando/pain3 }
+$random commando/death		{ commando/die1 commando/die2 commando/die3 }
+
 bern/sight			BERNARD1
 bern/death			BERNARD2
