@@ -14,11 +14,9 @@ ACTOR Alsatian : CastleDogTemplate 20201
 
 ACTOR BritishHomeGuard : CastleGuardTemplate 20002
 {
-	//SeeSound "guard/sight"
-	//DeathSound "guard/death"
-	SeeSound "grunt/sight"
-	PainSound "grunt/pain"
-	DeathSound "grunt/death"
+	SeeSound "bhgs/sight"
+	DeathSound "bhgs/death"
+	PainSound "bhgs/pain"
 	Obituary "$DTH_GUARD"
 	States
 	{

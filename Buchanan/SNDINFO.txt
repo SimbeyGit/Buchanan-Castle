@@ -23,13 +23,21 @@ dog/sight			WSND0001
 dog/attack			WSND0029
 dog/death			WSND0016
 
-//bhgs/sight			WSND0000
+bhgs/sight1			BHGS0000
+bhgs/sight2			BHGS0001
+bhgs/sight3			BHGS0002
 
-//bhgs/die1			WSND0012
-//bhgs/die2			WSND0013
-//bhgs/die3			WSND0014
+bhgs/pain1			BHGS0003
+bhgs/pain2			BHGS0004
+bhgs/pain3			BHGS0005
 
-//$random bhgs/death		{ bhgs/die1 bhgs/die2 bhgs/die3 }
+bhgs/die1			BHGS0006
+bhgs/die2			BHGS0007
+bhgs/die3			BHGS0008
+
+$random bhgs/sight		{ bhgs/sight1 bhgs/sight2 bhgs/sight3 }
+$random bhgs/pain		{ bhgs/pain1 bhgs/pain2 bhgs/pain3 }
+$random bhgs/death		{ bhgs/die1 bhgs/die2 bhgs/die3 }
 
 bern/sight			BERNARD1
 bern/death			BERNARD2
