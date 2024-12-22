@@ -66,5 +66,21 @@ commando/die3			CMDO0005
 $random commando/pain		{ commando/pain1 commando/pain2 commando/pain3 }
 $random commando/death		{ commando/die1 commando/die2 commando/die3 }
 
+officer/sight1			OFCR0000
+officer/sight2			OFCR0001
+officer/sight3			OFCR0002
+
+officer/pain1			OFCR0003
+officer/pain2			OFCR0004
+officer/pain3			OFCR0005
+
+officer/die1			OFCR0006
+officer/die2			OFCR0007
+officer/die3			OFCR0008
+
+$random officer/sight		{ officer/sight1 officer/sight2 officer/sight3 }
+$random officer/pain		{ officer/pain1 officer/pain2 officer/pain3 }
+$random officer/death		{ officer/die1 officer/die2 officer/die3 }
+
 bern/sight			BERNARD1
 bern/death			BERNARD2
