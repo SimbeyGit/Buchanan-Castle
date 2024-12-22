@@ -39,5 +39,21 @@ $random bhgs/sight		{ bhgs/sight1 bhgs/sight2 bhgs/sight3 }
 $random bhgs/pain		{ bhgs/pain1 bhgs/pain2 bhgs/pain3 }
 $random bhgs/death		{ bhgs/die1 bhgs/die2 bhgs/die3 }
 
+police/sight1			RPLC0000
+police/sight2			RPLC0001
+police/sight3			RPLC0002
+
+police/pain1			RPLC0003
+police/pain2			RPLC0004
+police/pain3			RPLC0005
+
+police/die1			RPLC0006
+police/die2			RPLC0007
+police/die3			RPLC0008
+
+$random police/sight		{ police/sight1 police/sight2 police/sight3 }
+$random police/pain		{ police/pain1 police/pain2 police/pain3 }
+$random police/death		{ police/die1 police/die2 police/die3 }
+
 bern/sight			BERNARD1
 bern/death			BERNARD2

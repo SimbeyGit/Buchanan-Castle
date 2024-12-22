@@ -15,8 +15,8 @@ ACTOR Alsatian : CastleDogTemplate 20201
 ACTOR BritishHomeGuard : CastleGuardTemplate 20002
 {
 	SeeSound "bhgs/sight"
-	DeathSound "bhgs/death"
 	PainSound "bhgs/pain"
+	DeathSound "bhgs/death"
 	Obituary "$DTH_GUARD"
 	States
 	{
@@ -39,11 +39,9 @@ ACTOR MBritishHomeGuard : BritishHomeGuard 20202
 
 ACTOR RoyalMilitaryPolice : PoliceTemplate 20003
 {
-	//SeeSound "police/sight"
-	//DeathSound "police/death"
-	SeeSound "grunt/sight"
-	PainSound "grunt/pain"
-	DeathSound "grunt/death"
+	SeeSound "police/sight"
+	PainSound "police/pain"
+	DeathSound "police/death"
 	Obituary "$DTH_POLICE"
 	States
 	{
