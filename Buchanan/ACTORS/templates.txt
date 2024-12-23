@@ -200,7 +200,7 @@ ACTOR CastleGuardTemplate : CastleEnemy
 	}
 }
 
-ACTOR PoliceTemplate : CastleEnemy
+ACTOR CastlePoliceTemplate : CastleEnemy
 {
 	Health 100
 	Speed 4
@@ -268,6 +268,93 @@ ACTOR PoliceTemplate : CastleEnemy
 	Dead:
 		"####" N -1 
 		Stop
+	}
+}
+
+ACTOR CastleOfficerTemplate : CastleEnemy
+{
+	Speed 5
+	Health 50
+	States
+	{
+	Spawn:
+		UNKN A 0
+	Spawn.Stand:
+		"####" ZZZZZZ 2 A_LookEx (0, 0, 0, 2048, 0, "See")
+		Loop
+	Spawn.PatrolNoClip:
+		"####" A 0 A_JumpIf(angle % 90 == 0, "TurnAround")
+		"####" A 6 A_Warp(AAPTR_DEFAULT, 45, 0, 0, 0, WARPF_STOP | WARPF_INTERPOLATE, "Spawn.Patrol")
+		"####" A 6 A_Warp(AAPTR_DEFAULT, 90, 0, 0, 0, WARPF_STOP | WARPF_INTERPOLATE, "Spawn.Patrol")
+	TurnAround:
+		"####" Z 10
+		"####" ZZ 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
+		"####" A 0 A_JumpIf((velx != 0) || (vely != 0), "Spawn.Patrol")
+		"####" Z 10
+		"####" ZZ 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
+		"####" A 0 A_JumpIf((velx != 0) || (vely != 0), "Spawn.Patrol")
+		"####" A 0 A_SetAngle(angle + 180)
+	Spawn.Patrol:
+		"####" AA 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
+		"####" AA 1 A_LookEx (0, 0, 0, 2048, 0, "See")
+		"####" BBBB 1 A_LookEx (0, 0, 0, 2048, 0, "See")
+		"####" CC 1 ThrustThing (angle * 256 / 360, 1, 0, 0)
+		"####" CC 1 A_LookEx (0, 0, 0, 2048, 0, "See")
+		"####" DDDD 1 A_LookEx (0, 0, 0, 2048, 0, "See")
+		"####" A 0 A_JumpIf((velx == 0) && (vely == 0), "Spawn.PatrolNoClip")
+		Loop
+	Chase:
+		"####" AAAAA 1 A_Chase
+		"####" A 1
+		"####" BBBB 1 A_Chase
+		"####" CCCCC 1 A_Chase
+		"####" CC 1
+		"####" DDDD 1 A_Chase
+		Loop
+	Missile:
+		"####" # 0 A_Stop
+		"####" E 3 A_FaceTarget
+		"####" F 10 A_FaceTarget
+		"####" G 5 BRIGHT A_WolfAttack(0, "shots/single", 1.0, 64, 64, 2, 4, 160.0)
+		Goto Chase
+	Pain:
+		"####" A 0 A_JumpIf(health % 1, "Pain.Alt")
+		"####" H 5 A_Pain
+		Goto Chase
+	Pain.Alt:
+		"####" L 5 A_Pain
+		Goto Chase
+	Death:
+		"####" A 0 ACS_NamedExecuteAlways ("A_Drop", 0, 0, 0, user_lost)
+		"####" A 0 A_JumpIf(CallACS("A_DeathScream"), 2)
+		"####" A 0 A_Scream
+		"####" I 5
+		"####" J 6
+		"####" K 5 A_GiveToTarget("Points", 400)
+		"####" M 6
+	Dead:
+		"####" N -1 
+		Stop
+	}
+}
+
+ACTOR CastleCommandoTemplate : CastlePoliceTemplate
+{
+	Health 130
+	Speed 5
+	States
+	{
+	Missile:
+		"####" # 0 A_Stop
+		"####" GH 10 A_FaceTarget
+		"####" I 5 BRIGHT A_WolfAttack(0, "shots/burst2", 0.666, 64, 64, 2, 4, 160.0)
+		"####" H 5 A_FaceTarget
+		"####" I 5 BRIGHT A_WolfAttack(0, "shots/burst2", 0.666, 64, 64, 2, 4, 160.0)
+		"####" H 5 A_FaceTarget
+		"####" I 5 BRIGHT A_WolfAttack(0, "shots/burst2", 0.666, 64, 64, 2, 4, 160.0)
+		"####" H 5 A_FaceTarget
+		"####" I 5 BRIGHT A_WolfAttack(0, "shots/burst2", 0.666, 64, 64, 2, 4, 160.0)
+		Goto Chase
 	}
 }
 

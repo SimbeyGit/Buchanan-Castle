@@ -3,6 +3,8 @@
 DTH_DOG = "%o was bitten by a Dog.";
 DTH_GUARD = "%o was killed by a Guard.";
 DTH_POLICE = "%o was killed by Military Police.";
+DTH_OFFICER = "%o was killed by an Officer.";
+DTH_COMMANDO = "%o was killed by a Commando.";
 DTH_BERN = "%o was killed by Bernard Montgomery.";
 DTH_PACMAN = "%o was killed by a Pac-Man ghost.";
 

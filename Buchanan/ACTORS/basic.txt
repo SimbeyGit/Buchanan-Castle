@@ -37,7 +37,7 @@ ACTOR MBritishHomeGuard : BritishHomeGuard 20202
 	}
 }
 
-ACTOR RoyalMilitaryPolice : PoliceTemplate 20003
+ACTOR RoyalMilitaryPolice : CastlePoliceTemplate 20003
 {
 	SeeSound "police/sight"
 	PainSound "police/pain"
@@ -58,6 +58,55 @@ ACTOR MRoyalMilitaryPolice : RoyalMilitaryPolice 20203
 	{
 	Spawn:
 		RMPS A 0
+		Goto Spawn.Patrol
+	}
+}
+
+ACTOR BritishOfficer : CastleOfficerTemplate 20004
+{
+	SeeSound "officer/sight"
+	PainSound "officer/pain"
+	DeathSound "officer/death"
+	Obituary "$DTH_OFFICER"
+	States
+	{
+	Spawn:
+		OFCR A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR MBritishOfficer : BritishOfficer 20204
+{
+	+JUSTHIT
+	States
+	{
+	Spawn:
+		OFCR A 0
+		Goto Spawn.Patrol
+	}
+}
+
+ACTOR Commando : CastleCommandoTemplate 20007
+{
+	PainSound "commando/pain"
+	DeathSound "commando/death"
+	Obituary "$DTH_COMMANDO"
+	States
+	{
+	Spawn:
+		CMDO A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR MCommando : Commando 20207
+{
+	+JUSTHIT
+	States
+	{
+	Spawn:
+		CMDO A 0
 		Goto Spawn.Patrol
 	}
 }
