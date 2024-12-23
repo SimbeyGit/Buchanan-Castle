@@ -82,5 +82,21 @@ $random officer/sight		{ officer/sight1 officer/sight2 officer/sight3 }
 $random officer/pain		{ officer/pain1 officer/pain2 officer/pain3 }
 $random officer/death		{ officer/die1 officer/die2 officer/die3 }
 
+kguard/sight1			KGRD0000
+kguard/sight2			KGRD0001
+kguard/sight3			KGRD0002
+
+kguard/pain1			KGRD0003
+kguard/pain2			KGRD0004
+kguard/pain3			KGRD0005
+
+kguard/die1			KGRD0006
+kguard/die2			KGRD0007
+kguard/die3			KGRD0008
+
+$random kguard/sight		{ kguard/sight1 kguard/sight2 kguard/sight3 }
+$random kguard/pain		{ kguard/pain1 kguard/pain2 kguard/pain3 }
+$random kguard/death		{ kguard/die1 kguard/die2 kguard/die3 }
+
 bern/sight			BERNARD1
 bern/death			BERNARD2
