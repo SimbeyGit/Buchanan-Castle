@@ -103,3 +103,10 @@ $random kguard/death		{ kguard/die1 kguard/die2 kguard/die3 }
 
 bern/sight			BERNARD1
 bern/death			BERNARD2
+
+indiana/clip1			INDIANA1
+indiana/clip2			INDIANA2
+indiana/clip3			INDIANA3
+indiana/clip4			INDIANA4
+indiana/clip5			INDIANA5
+indiana/clip6			INDIANA6
