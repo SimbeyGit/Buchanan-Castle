@@ -19,3 +19,9 @@ PU_CGUN = "Chaingun";
 
 TAG_MGUN = "Machine Gun";
 TAG_CGUN = "Chaingun";
+
+//Skill Names
+SK_1 = "Can I play, Daddy?";
+SK_2 = "Don't hurt me.";
+SK_3 = "Bring 'em on!";
+SK_4 = "I am the Blitzkrieg!";

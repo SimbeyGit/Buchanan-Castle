@@ -281,14 +281,15 @@ map E2L9 "Floor 9"
 	next = EndGame
 	{
 		pic = "ENDING2"
-		music = ERIKA
+		music = COURAGE
 	}
 	par = 0
 	levelnum = 19
 	interpic = INTERPIC
 	intermusic = ENDLEVEL
 	sky1 = "SKY1"
-	cluster = 2
+	cluster = 3
+	specialaction = "BernardMontgomery", "ACS_ExecuteAlways", 27, 0	// This is a placeholder for testing
 }
 
 map E2L0 "Secret Floor"
@@ -322,4 +323,63 @@ cluster 2
 		"Eternal Darkness.",
 		"",
 		"But for now...  Welcome to the jungle!"
+}
+
+cluster 3
+{
+	flat = CEIL5
+	music = COURAGE
+	exittext = "As Winston Churchill draws his final,",
+		"agonal breath, you feel relieved of a",
+		"great weight. Suddenly, you feel like",
+		"there might actually be hope after all.",
+		"Churchill was actively selling out not",
+		"just the British Empire, but the whole",
+		"western world was up for sale, and",
+		"Churchill was about to sign its fate.",
+		"",
+		"However, there is still one more fault",
+		"in this timeline. The world will not be",
+		"safe until the true, rightful king is",
+		"restored to power."
+}
+
+clearskills
+
+skill baby
+{
+	DamageFactor = 0.5
+	SpawnFilter = "Easy"
+	Name = "$SK_1"
+	Key = "C"
+
+	ReplaceActor = "BernardMontgomery", "BernardMontgomeryEasy"
+}
+
+skill easy
+{
+	SpawnFilter = "Easy"
+	Name = "$SK_2"
+	Key = "D"
+
+	ReplaceActor = "BernardMontgomery", "BernardMontgomeryNormal"
+}
+
+skill normal
+{
+	SpawnFilter = "Normal"
+	Name = "$SK_3"
+	Key = "B"
+	defaultskill
+
+	ReplaceActor = "BernardMontgomery", "BernardMontgomeryMedium"
+}
+
+skill hard
+{
+	SpawnFilter = "Hard"
+	Name = "$SK_4"
+	Key = "I"
+
+	ReplaceActor = "BernardMontgomery", "BernardMontgomeryHard"
 }
