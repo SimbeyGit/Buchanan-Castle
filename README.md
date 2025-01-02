@@ -1,6 +1,8 @@
 # Buchanan-Castle
 ## Escape from Buchanan Castle in this "inverse" Wolfenstein 3D-style ZDoom mod
 
+![Escape from Buchanan Castle title screen](Buchanan/GRAPHICS/TITLEPIC.png)
+
 How to build and play:
 
 1)	Install QuadooScript

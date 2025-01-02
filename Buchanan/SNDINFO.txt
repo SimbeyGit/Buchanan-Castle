@@ -113,4 +113,5 @@ indiana/clip6			INDIANA6
 
 churchill/intro			CHURCH1
 churchill/sight			CHURCH2
-churchill/death			CHURCH3
+churchill/phase2		CHURCH3
+churchill/death			CHURCH4
