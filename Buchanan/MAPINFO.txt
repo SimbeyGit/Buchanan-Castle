@@ -18,6 +18,12 @@ episode E2L1
 	Key = "p"
 }
 
+episode E3L1
+{
+	name = "Restore the Crown"
+	Key = "r"
+}
+
 // Episode 1
 
 map E1L1 "Floor 1"
@@ -343,6 +349,162 @@ cluster 3
 		"safe until the true, rightful king is",
 		"restored to power."
 }
+
+// Episode 3
+
+map E3L1 "Floor 1"
+{
+	music = NAZI_OMI
+	next = E3L2
+	par = 120
+	levelnum = 21
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 4
+}
+
+map E3L2 "Floor 2"
+{
+	music = INTROCW3
+	next = E3L3
+	par = 120
+	levelnum = 22
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 4
+}
+
+map E3L3 "Floor 3"	// Secret Exit
+{
+	music = NAZI_RAP
+	next = E3L4
+	secretnext = E3L0
+	par = 120
+	levelnum = 23
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 4
+}
+
+map E3L4 "Floor 4"
+{
+	music = TWELFTH
+	next = E3L5
+	par = 120
+	levelnum = 24
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 4
+}
+
+map E3L5 "Floor 5"
+{
+	music = GOINGAFT
+	next = E3L6
+	par = 120
+	levelnum = 25
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 4
+}
+
+map E3L6 "Floor 6"
+{
+	music = HEADACHE
+	next = E3L7
+	par = 120
+	levelnum = 26
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 4
+}
+
+map E3L7 "Floor 7"
+{
+	music = XGETYOU
+	next = E3L8
+	par = 120
+	levelnum = 27
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 4
+}
+
+map E3L8 "Floor 8"
+{
+	music = ZEROHOUR
+	next = E3L9
+	par = 120
+	levelnum = 28
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 4
+}
+
+map E3L9 "Floor 9 (A)"
+{
+	music = ULTIMATE
+	next = E3LA
+	par = 0
+	levelnum = 29
+	//interpic = INTERPIC
+	//intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 5
+	nointermission
+}
+
+map E3L0 "Secret Floor"
+{
+	music = FUNKYOU
+	next = E3L4
+	par = 120
+	levelnum = 30
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 4
+}
+
+map E3LA "Floor 9 (B)"
+{
+	music = XEVIL
+	next = EndGame
+	{
+		pics = "ENDING3", "ENDING4", "ENDING5", "ENDING6"
+		music = BARBGATE
+		time = 15
+	}
+	par = 120
+	levelnum = 31
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 5
+}
+
+cluster 4
+{
+	flat = CEIL5
+	music = XTOWER2
+}
+
+cluster 5
+{
+	flat = CEIL5
+	music = INVINCBL
+	hub
+}
+
+// Skills
 
 clearskills
 

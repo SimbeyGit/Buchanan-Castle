@@ -115,3 +115,5 @@ churchill/intro			CHURCH1
 churchill/sight			CHURCH2
 churchill/phase2		CHURCH3
 churchill/death			CHURCH4
+
+royalcrown/pickup		SSND0039

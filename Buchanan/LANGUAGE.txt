@@ -13,6 +13,7 @@ PU_FOOD = "Plate of Food";
 PU_YKEY = "Gold Key";
 PU_BKEY = "Silver Key";
 PU_RKEY = "Ruby Key";
+PU_ROYALCROWN = "Royal Crown";
 
 PU_MGUN = "Machine Gun";
 PU_CGUN = "Chaingun";

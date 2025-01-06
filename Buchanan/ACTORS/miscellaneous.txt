@@ -366,3 +366,26 @@ ACTOR RedKey : CastleKey 21045
 		Stop
 	}
 }
+
+ACTOR RoyalCrown : CustomInventory 21174
+{
+	+AUTOACTIVATE
+	+INVENTORY.PERSISTENTPOWER
+	+INVENTORY.BIGPOWERUP
+	+INVENTORY.KEEPDEPLETED
+	Inventory.Amount 1
+	Inventory.MaxAmount 0
+	Inventory.PickupSound "royalcrown/pickup"
+	Inventory.PickupMessage "$PU_ROYALCROWN"
+	States
+	{
+	Spawn:
+		CRWN A 1
+	Static:
+		CRWN A -1
+		Stop
+	Pickup:
+		CRWN A 0 ACS_NamedExecute("RoyalCrownExit", 0, 31)
+		Stop
+	}
+}
