@@ -495,6 +495,22 @@ cluster 4
 {
 	flat = CEIL5
 	music = XTOWER2
+	entertext = "It is entirely within reason to say that",
+		"one singular event is responsible for the",
+		"nightmare that is our timeline.",
+		"",
+		"On December 11th, 1936, King Edward VIII",
+		"abdicated the throne due to his desire to",
+		"marry Wallis Simpson, a twice-divorced",
+		"American woman. Had King Edward VIII chosen",
+		"to remain on the throne, it is certain the",
+		"UK would have instead joined Germany's",
+		"efforts to fight Bolshevism. Additionally,",
+		"had King Edward VIII remained in power,",
+		"Oswald Mosley would not have been",
+		"imprisoned in 1940. Instead, Oswald Mosley",
+		"would have become Prime Minister, and war",
+		"against Germany would have been prevented."
 }
 
 cluster 5
