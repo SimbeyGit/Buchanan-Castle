@@ -495,9 +495,9 @@ cluster 4
 {
 	flat = CEIL5
 	music = XTOWER2
-	entertext = "It is entirely within reason to say that",
-		"one singular event is responsible for the",
-		"nightmare that is our timeline.",
+	entertext = "It is entirely within reason to suggest",
+		"that one singular event is responsible for",
+		"the nightmare that is our timeline.",
 		"",
 		"On December 11th, 1936, King Edward VIII",
 		"abdicated the throne due to his desire to",
@@ -518,6 +518,7 @@ cluster 5
 	flat = CEIL5
 	music = INVINCBL
 	hub
+	scrolltext
 }
 
 // Skills
