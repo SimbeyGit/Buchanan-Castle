@@ -432,9 +432,10 @@ ACTOR CastleBossBernardTemplate : CastleBoss
 		"####" A 0 A_JumpIfCloser(64, "Attack")
 		Goto Walk
 	Death:
+		"####" E 80 A_Scream
 		"####" H 3 ACS_NamedExecuteAlways("A_Drop", 0, 2, 0, user_lost)
 		"####" H 4 A_GiveToTarget("Points", 5000)
-		"####" I 8 A_Scream
+		"####" I 8
 		"####" J 7 A_BossDeath
 	Dead:
 		"####" K -1 

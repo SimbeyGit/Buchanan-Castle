@@ -9,7 +9,7 @@ How to build and play:
 
 2)	Run Build.quadoo (QuadooScript console script)
 
-3)	Add the path to your Doom IWAD in Buchanan.json
+3)	Add the path to your Doom 2 IWAD (or Freedoom 2 IWAD) in Buchanan.json
 
 4)	Run Buchanan.wqs (QuadooScript Windows script)
 
