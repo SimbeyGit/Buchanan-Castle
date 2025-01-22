@@ -111,6 +111,56 @@ ACTOR MCommando : Commando 20207
 	}
 }
 
+ACTOR KingsGuard : KingsGuardTemplate 20005
+{
+	SeeSound "kguard/sight"
+	PainSound "kguard/pain"
+	DeathSound "kguard/death"
+	Obituary "$DTH_KGUARD"
+	States
+	{
+	Spawn:
+		KGRD A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR MKingsGuard : KingsGuard 20205
+{
+	+JUSTHIT
+	States
+	{
+	Spawn:
+		KGRD A 0
+		Goto Spawn.Patrol
+	}
+}
+
+ACTOR SecretService : SecretServiceTemplate 20008
+{
+	SeeSound "usss/sight"
+	PainSound "usss/pain"
+	DeathSound "usss/death"
+	Obituary "$DTH_SECRETSERVICE"
+	States
+	{
+	Spawn:
+		USSS A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR MSecretService : SecretService 20208
+{
+	+JUSTHIT
+	States
+	{
+	Spawn:
+		USSS A 0
+		Goto Spawn.Patrol
+	}
+}
+
 ACTOR Blinky : PacManGhostTemplate 20224 //20020
 {
 	States

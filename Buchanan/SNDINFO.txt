@@ -101,6 +101,21 @@ $random kguard/sight		{ kguard/sight1 kguard/sight2 kguard/sight3 }
 $random kguard/pain		{ kguard/pain1 kguard/pain2 kguard/pain3 }
 $random kguard/death		{ kguard/die1 kguard/die2 kguard/die3 }
 
+usss/sight1			USSS0000
+usss/sight2			USSS0001
+usss/sight3			USSS0002
+
+usss/pain1			USSS0003
+usss/pain2			USSS0004
+
+usss/die1			USSS0005
+usss/die2			USSS0006
+usss/die3			USSS0007
+
+$random usss/sight		{ usss/sight1 usss/sight2 usss/sight3 }
+$random usss/pain		{ usss/pain1 usss/pain2 }
+$random usss/death		{ usss/die1 usss/die2 usss/die3 }
+
 bern/sight			BERNARD1
 bern/death			BERNARD2
 

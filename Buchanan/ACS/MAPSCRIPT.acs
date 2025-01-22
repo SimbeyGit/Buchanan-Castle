@@ -201,3 +201,10 @@ Script "A_PatrolTurn" (int angle, int TurnX, int TurnY)
 		}
 	}
 }
+
+Script "RoyalCrownExit" (int nNext)
+{
+	Thing_Stop(0);
+	delay(35 * 2);
+	Teleport_NewMap(nNext, 0, 1);
+}

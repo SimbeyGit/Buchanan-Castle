@@ -48,6 +48,7 @@ Sprite Optional CGUNC0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR
 Sprite Optional CGUND0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0434, 0, 0}
 Sprite Optional CGUNE0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0435, 0, 0}
 
+// Dog/Alsatian
 Sprite Optional WDOGA1, 64, 64 {Offset 32, 64 Graphic WSPR0099, 0, 0}
 Sprite Optional WDOGA2, 64, 64 {Offset 32, 64 Graphic WSPR0100, 0, 0}
 Sprite Optional WDOGA3, 64, 64 {Offset 32, 64 Graphic WSPR0101, 0, 0}
@@ -88,6 +89,7 @@ Sprite Optional WDOGE0, 64, 64 {Offset 32, 64 Graphic WSPR0135, 0, 0}
 Sprite Optional WDOGF0, 64, 64 {Offset 32, 64 Graphic WSPR0136, 0, 0}
 Sprite Optional WDOGG0, 64, 64 {Offset 32, 64 Graphic WSPR0137, 0, 0}
 
+// British Home Guard Soldier
 Sprite Optional BHGSE1, 64, 64 {Offset 32, 64 Graphic WSPR0050, 0, 0}
 Sprite Optional BHGSE2, 64, 64 {Offset 32, 64 Graphic WSPR0051, 0, 0}
 Sprite Optional BHGSE3, 64, 64 {Offset 32, 64 Graphic WSPR0052, 0, 0}
@@ -138,6 +140,7 @@ Sprite Optional BHGSG0, 64, 64 {Offset 32, 64 Graphic WSPR0096, 0, 0}
 Sprite Optional BHGSH0, 64, 64 {Offset 32, 64 Graphic WSPR0097, 0, 0}
 Sprite Optional BHGSI0, 64, 64 {Offset 32, 64 Graphic WSPR0098, 0, 0}
 
+// Royal Military Police
 Sprite Optional RMPSE1, 64, 64 {Offset 32, 64 Graphic WSPR0138, 0, 0}
 Sprite Optional RMPSE2, 64, 64 {Offset 32, 64 Graphic WSPR0139, 0, 0}
 Sprite Optional RMPSE3, 64, 64 {Offset 32, 64 Graphic WSPR0140, 0, 0}
@@ -188,6 +191,7 @@ Sprite Optional RMPSG0, 64, 64 {Offset 32, 64 Graphic WSPR0184, 0, 0}
 Sprite Optional RMPSH0, 64, 64 {Offset 32, 64 Graphic WSPR0185, 0, 0}
 Sprite Optional RMPSI0, 64, 64 {Offset 32, 64 Graphic WSPR0186, 0, 0}
 
+// Officer
 Sprite Optional OFCRZ1, 64, 64 {Offset 32, 64 Graphic WSPR0238, 0, 0}
 Sprite Optional OFCRZ2, 64, 64 {Offset 32, 64 Graphic WSPR0239, 0, 0}
 Sprite Optional OFCRZ3, 64, 64 {Offset 32, 64 Graphic WSPR0240, 0, 0}
@@ -239,6 +243,7 @@ Sprite Optional OFCRE0, 64, 64 {Offset 32, 64 Graphic WSPR0285, 0, 0}
 Sprite Optional OFCRF0, 64, 64 {Offset 32, 64 Graphic WSPR0286, 0, 0}
 Sprite Optional OFCRG0, 64, 64 {Offset 32, 64 Graphic WSPR0287, 0, 0}
 
+// Commando
 Sprite Optional CMDOE1, 64, 64 {Offset 32, 64 Graphic WSPR3385, 0, 0}
 Sprite Optional CMDOE2, 64, 64 {Offset 32, 64 Graphic WSPR3386, 0, 0}
 Sprite Optional CMDOE3, 64, 64 {Offset 32, 64 Graphic WSPR3387, 0, 0}
@@ -289,6 +294,121 @@ Sprite Optional CMDOG0, 64, 64 {Offset 32, 64 Graphic WSPR3431, 0, 0}
 Sprite Optional CMDOH0, 64, 64 {Offset 32, 64 Graphic WSPR3432, 0, 0}
 Sprite Optional CMDOI0, 64, 64 {Offset 32, 64 Graphic WSPR3433, 0, 0}
 
+// King's Guard
+Sprite Optional KGRDZ1, 64, 64 {Offset 32, 64 Graphic WSPR0187, 0, 0}
+Sprite Optional KGRDZ2, 64, 64 {Offset 32, 64 Graphic WSPR0188, 0, 0}
+Sprite Optional KGRDZ3, 64, 64 {Offset 32, 64 Graphic WSPR0189, 0, 0}
+Sprite Optional KGRDZ4, 64, 64 {Offset 32, 64 Graphic WSPR0190, 0, 0}
+Sprite Optional KGRDZ5, 64, 64 {Offset 32, 64 Graphic WSPR0191, 0, 0}
+Sprite Optional KGRDZ6, 64, 64 {Offset 32, 64 Graphic WSPR0192, 0, 0}
+Sprite Optional KGRDZ7, 64, 64 {Offset 32, 64 Graphic WSPR0193, 0, 0}
+Sprite Optional KGRDZ8, 64, 64 {Offset 32, 64 Graphic WSPR0194, 0, 0}
+Sprite Optional KGRDA1, 64, 64 {Offset 32, 64 Graphic WSPR0195, 0, 0}
+Sprite Optional KGRDA2, 64, 64 {Offset 32, 64 Graphic WSPR0196, 0, 0}
+Sprite Optional KGRDA3, 64, 64 {Offset 32, 64 Graphic WSPR0197, 0, 0}
+Sprite Optional KGRDA4, 64, 64 {Offset 32, 64 Graphic WSPR0198, 0, 0}
+Sprite Optional KGRDA5, 64, 64 {Offset 32, 64 Graphic WSPR0199, 0, 0}
+Sprite Optional KGRDA6, 64, 64 {Offset 32, 64 Graphic WSPR0200, 0, 0}
+Sprite Optional KGRDA7, 64, 64 {Offset 32, 64 Graphic WSPR0201, 0, 0}
+Sprite Optional KGRDA8, 64, 64 {Offset 32, 64 Graphic WSPR0202, 0, 0}
+Sprite Optional KGRDB1, 64, 64 {Offset 32, 64 Graphic WSPR0203, 0, 0}
+Sprite Optional KGRDB2, 64, 64 {Offset 32, 64 Graphic WSPR0204, 0, 0}
+Sprite Optional KGRDB3, 64, 64 {Offset 32, 64 Graphic WSPR0205, 0, 0}
+Sprite Optional KGRDB4, 64, 64 {Offset 32, 64 Graphic WSPR0206, 0, 0}
+Sprite Optional KGRDB5, 64, 64 {Offset 32, 64 Graphic WSPR0207, 0, 0}
+Sprite Optional KGRDB6, 64, 64 {Offset 32, 64 Graphic WSPR0208, 0, 0}
+Sprite Optional KGRDB7, 64, 64 {Offset 32, 64 Graphic WSPR0209, 0, 0}
+Sprite Optional KGRDB8, 64, 64 {Offset 32, 64 Graphic WSPR0210, 0, 0}
+Sprite Optional KGRDC1, 64, 64 {Offset 32, 64 Graphic WSPR0211, 0, 0}
+Sprite Optional KGRDC2, 64, 64 {Offset 32, 64 Graphic WSPR0212, 0, 0}
+Sprite Optional KGRDC3, 64, 64 {Offset 32, 64 Graphic WSPR0213, 0, 0}
+Sprite Optional KGRDC4, 64, 64 {Offset 32, 64 Graphic WSPR0214, 0, 0}
+Sprite Optional KGRDC5, 64, 64 {Offset 32, 64 Graphic WSPR0215, 0, 0}
+Sprite Optional KGRDC6, 64, 64 {Offset 32, 64 Graphic WSPR0216, 0, 0}
+Sprite Optional KGRDC7, 64, 64 {Offset 32, 64 Graphic WSPR0217, 0, 0}
+Sprite Optional KGRDC8, 64, 64 {Offset 32, 64 Graphic WSPR0218, 0, 0}
+Sprite Optional KGRDD1, 64, 64 {Offset 32, 64 Graphic WSPR0219, 0, 0}
+Sprite Optional KGRDD2, 64, 64 {Offset 32, 64 Graphic WSPR0220, 0, 0}
+Sprite Optional KGRDD3, 64, 64 {Offset 32, 64 Graphic WSPR0221, 0, 0}
+Sprite Optional KGRDD4, 64, 64 {Offset 32, 64 Graphic WSPR0222, 0, 0}
+Sprite Optional KGRDD5, 64, 64 {Offset 32, 64 Graphic WSPR0223, 0, 0}
+Sprite Optional KGRDD6, 64, 64 {Offset 32, 64 Graphic WSPR0224, 0, 0}
+Sprite Optional KGRDD7, 64, 64 {Offset 32, 64 Graphic WSPR0225, 0, 0}
+Sprite Optional KGRDD8, 64, 64 {Offset 32, 64 Graphic WSPR0226, 0, 0}
+Sprite Optional KGRDJ0, 64, 64 {Offset 32, 64 Graphic WSPR0227, 0, 0}
+Sprite Optional KGRDK0, 64, 64 {Offset 32, 64 Graphic WSPR0228, 0, 0}
+Sprite Optional KGRDL0, 64, 64 {Offset 32, 64 Graphic WSPR0229, 0, 0}
+Sprite Optional KGRDM0, 64, 64 {Offset 32, 64 Graphic WSPR0230, 0, 0}
+Sprite Optional KGRDE0, 64, 64 {Offset 32, 64 Graphic WSPR0231, 0, 0}
+Sprite Optional KGRDN0, 64, 64 {Offset 32, 64 Graphic WSPR0232, 0, 0}
+Sprite Optional KGRDO0, 64, 64 {Offset 32, 64 Graphic WSPR0233, 0, 0}
+Sprite Optional KGRDG0, 64, 64 {Offset 32, 64 Graphic WSPR0234, 0, 0}
+Sprite Optional KGRDH0, 64, 64 {Offset 32, 64 Graphic WSPR0235, 0, 0}
+Sprite Optional KGRDG0, 64, 64 {Offset 32, 64 Graphic WSPR0236, 0, 0}
+Sprite Optional KGRDI0, 64, 64 {Offset 32, 64 Graphic WSPR0237, 0, 0}
+
+// Secret Service
+Sprite Optional USSSE1, 64, 64 {Offset 32, 64 Graphic WSPR3434, 0, 0}
+Sprite Optional USSSE2, 64, 64 {Offset 32, 64 Graphic WSPR3435, 0, 0}
+Sprite Optional USSSE3, 64, 64 {Offset 32, 64 Graphic WSPR3436, 0, 0}
+Sprite Optional USSSE4, 64, 64 {Offset 32, 64 Graphic WSPR3437, 0, 0}
+Sprite Optional USSSE5, 64, 64 {Offset 32, 64 Graphic WSPR3438, 0, 0}
+Sprite Optional USSSE6, 64, 64 {Offset 32, 64 Graphic WSPR3439, 0, 0}
+Sprite Optional USSSE7, 64, 64 {Offset 32, 64 Graphic WSPR3440, 0, 0}
+Sprite Optional USSSE8, 64, 64 {Offset 32, 64 Graphic WSPR3441, 0, 0}
+Sprite Optional USSSA1, 64, 64 {Offset 32, 64 Graphic WSPR3442, 0, 0}
+Sprite Optional USSSA2, 64, 64 {Offset 32, 64 Graphic WSPR3443, 0, 0}
+Sprite Optional USSSA3, 64, 64 {Offset 32, 64 Graphic WSPR3444, 0, 0}
+Sprite Optional USSSA4, 64, 64 {Offset 32, 64 Graphic WSPR3445, 0, 0}
+Sprite Optional USSSA5, 64, 64 {Offset 32, 64 Graphic WSPR3446, 0, 0}
+Sprite Optional USSSA6, 64, 64 {Offset 32, 64 Graphic WSPR3447, 0, 0}
+Sprite Optional USSSA7, 64, 64 {Offset 32, 64 Graphic WSPR3448, 0, 0}
+Sprite Optional USSSA8, 64, 64 {Offset 32, 64 Graphic WSPR3449, 0, 0}
+Sprite Optional USSSB1, 64, 64 {Offset 32, 64 Graphic WSPR3450, 0, 0}
+Sprite Optional USSSB2, 64, 64 {Offset 32, 64 Graphic WSPR3451, 0, 0}
+Sprite Optional USSSB3, 64, 64 {Offset 32, 64 Graphic WSPR3452, 0, 0}
+Sprite Optional USSSB4, 64, 64 {Offset 32, 64 Graphic WSPR3453, 0, 0}
+Sprite Optional USSSB5, 64, 64 {Offset 32, 64 Graphic WSPR3454, 0, 0}
+Sprite Optional USSSB6, 64, 64 {Offset 32, 64 Graphic WSPR3455, 0, 0}
+Sprite Optional USSSB7, 64, 64 {Offset 32, 64 Graphic WSPR3456, 0, 0}
+Sprite Optional USSSB8, 64, 64 {Offset 32, 64 Graphic WSPR3457, 0, 0}
+Sprite Optional USSSC1, 64, 64 {Offset 32, 64 Graphic WSPR3458, 0, 0}
+Sprite Optional USSSC2, 64, 64 {Offset 32, 64 Graphic WSPR3459, 0, 0}
+Sprite Optional USSSC3, 64, 64 {Offset 32, 64 Graphic WSPR3460, 0, 0}
+Sprite Optional USSSC4, 64, 64 {Offset 32, 64 Graphic WSPR3461, 0, 0}
+Sprite Optional USSSC5, 64, 64 {Offset 32, 64 Graphic WSPR3462, 0, 0}
+Sprite Optional USSSC6, 64, 64 {Offset 32, 64 Graphic WSPR3463, 0, 0}
+Sprite Optional USSSC7, 64, 64 {Offset 32, 64 Graphic WSPR3464, 0, 0}
+Sprite Optional USSSC8, 64, 64 {Offset 32, 64 Graphic WSPR3465, 0, 0}
+Sprite Optional USSSD1, 64, 64 {Offset 32, 64 Graphic WSPR3466, 0, 0}
+Sprite Optional USSSD2, 64, 64 {Offset 32, 64 Graphic WSPR3467, 0, 0}
+Sprite Optional USSSD3, 64, 64 {Offset 32, 64 Graphic WSPR3468, 0, 0}
+Sprite Optional USSSD4, 64, 64 {Offset 32, 64 Graphic WSPR3469, 0, 0}
+Sprite Optional USSSD5, 64, 64 {Offset 32, 64 Graphic WSPR3470, 0, 0}
+Sprite Optional USSSD6, 64, 64 {Offset 32, 64 Graphic WSPR3471, 0, 0}
+Sprite Optional USSSD7, 64, 64 {Offset 32, 64 Graphic WSPR3472, 0, 0}
+Sprite Optional USSSD8, 64, 64 {Offset 32, 64 Graphic WSPR3473, 0, 0}
+Sprite Optional USSSJ0, 64, 64 {Offset 32, 64 Graphic WSPR3474, 0, 0}
+Sprite Optional USSSK0, 64, 64 {Offset 32, 64 Graphic WSPR3475, 0, 0}
+Sprite Optional USSSL0, 64, 64 {Offset 32, 64 Graphic WSPR3476, 0, 0}
+Sprite Optional USSSM0, 64, 64 {Offset 32, 64 Graphic WSPR3477, 0, 0}
+Sprite Optional USSSF0, 64, 64 {Offset 32, 64 Graphic WSPR3478, 0, 0}
+Sprite Optional USSSN0, 64, 64 {Offset 32, 64 Graphic WSPR3479, 0, 0}
+Sprite Optional USSSG0, 64, 64 {Offset 32, 64 Graphic WSPR3480, 0, 0}
+Sprite Optional USSSH0, 64, 64 {Offset 32, 64 Graphic WSPR3481, 0, 0}
+Sprite Optional USSSI0, 64, 64 {Offset 32, 64 Graphic WSPR3482, 0, 0}
+
+// Pac Man
+Sprite Optional GHO1A0, 64, 64 {Offset 32, 64 Graphic WSPR0288, 0, 0}
+Sprite Optional GHO1B0, 64, 64 {Offset 32, 64 Graphic WSPR0289, 0, 0}
+Sprite Optional GHO2A0, 64, 64 {Offset 32, 64 Graphic WSPR0290, 0, 0}
+Sprite Optional GHO2B0, 64, 64 {Offset 32, 64 Graphic WSPR0291, 0, 0}
+Sprite Optional GHO3A0, 64, 64 {Offset 32, 64 Graphic WSPR0292, 0, 0}
+Sprite Optional GHO3B0, 64, 64 {Offset 32, 64 Graphic WSPR0293, 0, 0}
+Sprite Optional GHO0A0, 64, 64 {Offset 32, 64 Graphic WSPR0294, 0, 0}
+Sprite Optional GHO0B0, 64, 64 {Offset 32, 64 Graphic WSPR0295, 0, 0}
+
+// Bernard Montgomery
 Sprite Optional BERNA0, 64, 64 {Offset 32, 64 Graphic WSPR0296, 0, 0}
 Sprite Optional BERNB0, 64, 64 {Offset 32, 64 Graphic WSPR0297, 0, 0}
 Sprite Optional BERNC0, 64, 64 {Offset 32, 64 Graphic WSPR0298, 0, 0}
@@ -300,13 +420,3 @@ Sprite Optional BERNK0, 64, 64 {Offset 32, 64 Graphic WSPR0303, 0, 0}
 Sprite Optional BERNH0, 64, 64 {Offset 32, 64 Graphic WSPR0304, 0, 0}
 Sprite Optional BERNI0, 64, 64 {Offset 32, 64 Graphic WSPR0305, 0, 0}
 Sprite Optional BERNJ0, 64, 64 {Offset 32, 64 Graphic WSPR0306, 0, 0}
-
-//Pac Man
-Sprite Optional GHO1A0, 64, 64 {Offset 32, 64 Graphic WSPR0288, 0, 0}
-Sprite Optional GHO1B0, 64, 64 {Offset 32, 64 Graphic WSPR0289, 0, 0}
-Sprite Optional GHO2A0, 64, 64 {Offset 32, 64 Graphic WSPR0290, 0, 0}
-Sprite Optional GHO2B0, 64, 64 {Offset 32, 64 Graphic WSPR0291, 0, 0}
-Sprite Optional GHO3A0, 64, 64 {Offset 32, 64 Graphic WSPR0292, 0, 0}
-Sprite Optional GHO3B0, 64, 64 {Offset 32, 64 Graphic WSPR0293, 0, 0}
-Sprite Optional GHO0A0, 64, 64 {Offset 32, 64 Graphic WSPR0294, 0, 0}
-Sprite Optional GHO0B0, 64, 64 {Offset 32, 64 Graphic WSPR0295, 0, 0}
