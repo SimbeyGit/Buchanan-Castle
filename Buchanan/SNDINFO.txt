@@ -131,4 +131,6 @@ churchill/sight			CHURCH2
 churchill/phase2		CHURCH3
 churchill/death			CHURCH4
 
+king/fire			DSKGFIRE
+
 royalcrown/pickup		SSND0039

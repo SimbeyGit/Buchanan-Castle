@@ -420,3 +420,9 @@ Sprite Optional BERNK0, 64, 64 {Offset 32, 64 Graphic WSPR0303, 0, 0}
 Sprite Optional BERNH0, 64, 64 {Offset 32, 64 Graphic WSPR0304, 0, 0}
 Sprite Optional BERNI0, 64, 64 {Offset 32, 64 Graphic WSPR0305, 0, 0}
 Sprite Optional BERNJ0, 64, 64 {Offset 32, 64 Graphic WSPR0306, 0, 0}
+
+// Projectiles
+Sprite Optional KGBLA0, 64, 64 {Offset 32, 32 Graphic WSPR1322, 0, 0}
+Sprite Optional KGBLB0, 64, 64 {Offset 32, 32 Graphic WSPR1323, 0, 0}
+Sprite Optional KGBLC0, 64, 64 {Offset 32, 32 Graphic WSPR1324, 0, 0}
+Sprite Optional KGBLD0, 64, 64 {Offset 32, 32 Graphic WSPR1325, 0, 0}
