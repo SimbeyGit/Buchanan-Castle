@@ -479,7 +479,7 @@ map E3LA "Floor 9 (B)"
 	music = XEVIL
 	next = EndGame
 	{
-		pics = "ENDING3", "ENDING4", "ENDING5", "ENDING6"
+		pics = "ENDING3A", "ENDING3B", "ENDING3C", "ENDING3D"
 		music = BARBGATE
 		time = 15
 	}
@@ -597,6 +597,7 @@ skill baby
 	Key = "C"
 
 	ReplaceActor = "BernardMontgomery", "BernardMontgomeryEasy"
+	ReplaceActor = "KingGeorge", "KingGeorgeEasy"
 }
 
 skill easy
@@ -606,6 +607,7 @@ skill easy
 	Key = "D"
 
 	ReplaceActor = "BernardMontgomery", "BernardMontgomeryNormal"
+	ReplaceActor = "KingGeorge", "KingGeorgeNormal"
 }
 
 skill normal
@@ -616,6 +618,7 @@ skill normal
 	defaultskill
 
 	ReplaceActor = "BernardMontgomery", "BernardMontgomeryMedium"
+	ReplaceActor = "KingGeorge", "KingGeorgeMedium"
 }
 
 skill hard
@@ -625,4 +628,5 @@ skill hard
 	Key = "I"
 
 	ReplaceActor = "BernardMontgomery", "BernardMontgomeryHard"
+	ReplaceActor = "KingGeorge", "KingGeorgeHard"
 }

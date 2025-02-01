@@ -485,7 +485,6 @@ ACTOR PacManGhostTemplate : CastleEnemy
 ACTOR CastleBossBernardTemplate : CastleBoss
 //Base template for Bernard Montgomery
 {
-	Health 850
 	Speed 3
 	MaxTargetRange 256
 	States
@@ -524,6 +523,43 @@ ACTOR CastleBossBernardTemplate : CastleBoss
 		"####" J 7 A_BossDeath
 	Dead:
 		"####" K -1 
+		Stop
+	}
+}
+
+ACTOR CastleBossKingGeorgeTemplate : CastleBoss
+{
+	Speed 3
+	States
+	{
+	Spawn:
+		UNKN A 0
+	Spawn.Stand:
+		"####" A 5 A_Look
+		Loop
+	Chase:
+		"####" AAAAA 1 A_Chase
+		"####" A 1
+		"####" BBBB 1 A_Chase
+		"####" CCCCC 1 A_Chase
+		"####" CC 1
+		"####" DDDD 1 A_Chase
+		Loop
+	Missile:
+		"####" E 15 A_FaceTarget
+		"####" F 5 BRIGHT A_CustomMissile("GreenBall", 30, 5, 0)
+		"####" E 10 A_FaceTarget
+		"####" F 5 BRIGHT A_CustomMissile("GreenBall", 30, 5, 0)
+		"####" E 10 A_FaceTarget
+		"####" F 5 BRIGHT A_CustomMissile("GreenBall", 30, 5, 0)
+		Goto Chase
+	Death:
+		"####" A 70 A_Scream
+		"####" GH 5 ACS_NamedExecuteAlways("A_Drop", 0, 3, 0, user_lost)
+		"####" I 5 A_GiveToTarget("Points", 5000)
+		"####" J 1 A_BossDeath
+	Dead:
+		"####" J -1
 		Stop
 	}
 }
