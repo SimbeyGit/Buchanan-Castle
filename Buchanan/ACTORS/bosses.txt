@@ -29,6 +29,7 @@ ACTOR BernardMontgomery 20214
 
 ACTOR BernardMontgomeryEasy : CastleBossBernardTemplate
 {
+	Health 850
 	SeeSound "bern/sight"
 	DeathSound "bern/death"
 	Obituary "$DTH_BERN"
@@ -81,6 +82,7 @@ Actor KingGeorge 20215 //20013
 
 ACTOR KingGeorgeEasy : CastleBossKingGeorgeTemplate
 {
+	Health 850
 	SeeSound "king/sight"
 	DeathSound "king/death"
 	Obituary "$DTH_KINGGEORGE"
@@ -95,3 +97,51 @@ ACTOR KingGeorgeEasy : CastleBossKingGeorgeTemplate
 ACTOR KingGeorgeNormal : KingGeorgeEasy {Health 950}
 ACTOR KingGeorgeMedium : KingGeorgeEasy {Health 1050}
 ACTOR KingGeorgeHard : KingGeorgeEasy {Health 1200}
+
+Actor FDR 20179 //20015
+{
+	-SOLID
+	+NOSECTOR
+	RenderStyle None
+	States
+	{
+	Spawn:
+		FDRT A 0
+		FDRT A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 0, "EasySpawn")
+		FDRT A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 1, "NormalSpawn")
+		FDRT A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 2, "MediumSpawn") 
+		FDRT A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 3, "HardSpawn")
+		Stop
+	EasySpawn:
+		FDRT A 1 A_SpawnItemEx("FDREasy")
+		Stop
+	NormalSpawn:
+		FDRT A 1 A_SpawnItemEx("FDRNormal")
+		Stop
+	MediumSpawn:
+		FDRT A 1 A_SpawnItemEx("FDRMedium")
+		Stop
+	HardSpawn:
+		FDRT A 1 A_SpawnItemEx("FDRHard")
+		Stop
+	}
+}
+
+ACTOR FDREasy : CastleBossFDRTemplate
+{
+	Health 850
+	SeeSound "fdr/sight"
+	DeathSound "fdr/death"
+	Obituary "$DTH_FDR"
+	Damage 4
+	States
+	{
+	Spawn:
+		FDRT A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR FDRNormal : FDREasy {Health 950}
+ACTOR FDRMedium : FDREasy {Health 1050}
+ACTOR FDRHard : FDREasy {Health 1200}

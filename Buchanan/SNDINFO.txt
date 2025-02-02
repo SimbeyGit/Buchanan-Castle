@@ -135,4 +135,11 @@ king/sight			GEORGE1
 king/death			GEORGE2
 king/fire			DSKGFIRE
 
+fdr/intro			FDR1
+fdr/sight			FDR2
+fdr/death			FDR3
+
+missile/fire			DSMISSF
+missile/hit			DSMISSX
+
 royalcrown/pickup		SSND0039

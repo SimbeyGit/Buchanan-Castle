@@ -319,6 +319,72 @@ ACTOR Truck : BaseDecoration 21173
 	}
 }
 
+ACTOR SkullsonStick : BaseDecoration 21133
+{
+	Height 64
+	States
+	{
+	Static:
+		HEL3 A -1
+		Stop
+	}
+} 
+
+ACTOR BloodyCage : BaseDecoration 21138
+{ 
+	Height 64
+	States
+	{
+	Static:
+		HEL4 A -1
+		Stop
+	}
+} 
+
+ACTOR CageofSkulls : BaseDecoration 21145
+{ 
+	Height 64
+	States
+	{
+	Static:
+		HEL2 A -1
+		Stop
+	}
+} 
+
+ACTOR RedCeilingLight : BaseDecoration 21163
+{ 
+	-SOLID
+	States
+	{
+	Static:
+		LITR A -1
+		Stop
+	}
+} 
+
+ACTOR BullHeadonStick : BaseDecoration 21167
+{
+	Height 64
+	States
+	{
+	Static:
+		HEL1 A -1
+		Stop
+	}
+} 
+
+ACTOR BloodyWell : BaseDecoration 21168
+{ 
+	Height 64
+	States
+	{
+	Static:
+		HEL5 A -1
+		Stop
+	}
+}
+
 ACTOR YellowKey : CastleKey 21043
 {
 	Inventory.PickupSound "pickups/key"

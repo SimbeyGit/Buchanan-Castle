@@ -489,6 +489,7 @@ map E3LA "Floor 9 (B)"
 	intermusic = ENDLEVEL
 	sky1 = "SKY1"
 	cluster = 5
+	specialaction = "FDR", "ACS_ExecuteAlways", 27, 0
 }
 
 cluster 4
@@ -598,6 +599,7 @@ skill baby
 
 	ReplaceActor = "BernardMontgomery", "BernardMontgomeryEasy"
 	ReplaceActor = "KingGeorge", "KingGeorgeEasy"
+	ReplaceActor = "FDR", "FDREasy"
 }
 
 skill easy
@@ -608,6 +610,7 @@ skill easy
 
 	ReplaceActor = "BernardMontgomery", "BernardMontgomeryNormal"
 	ReplaceActor = "KingGeorge", "KingGeorgeNormal"
+	ReplaceActor = "FDR", "FDRNormal"
 }
 
 skill normal
@@ -619,6 +622,7 @@ skill normal
 
 	ReplaceActor = "BernardMontgomery", "BernardMontgomeryMedium"
 	ReplaceActor = "KingGeorge", "KingGeorgeMedium"
+	ReplaceActor = "FDR", "FDRMedium"
 }
 
 skill hard
@@ -629,4 +633,5 @@ skill hard
 
 	ReplaceActor = "BernardMontgomery", "BernardMontgomeryHard"
 	ReplaceActor = "KingGeorge", "KingGeorgeHard"
+	ReplaceActor = "FDR", "FDRHard"
 }

@@ -155,13 +155,56 @@ ACTOR Turn315 : Turn 22097
 	}
 }
 
+ACTOR WolfRocketSmoke
+{
+	+NOBLOCKMAP
+	+DROPOFF
+	+NOGRAVITY
+	-SOLID
+	Height 5
+	Radius 5
+	Speed 0
+	States
+	{
+	Spawn:
+		TNT1 A 3
+		RTRL ABC 2
+	Death:
+		RTRL D 2
+		Stop
+	}
+}
+
+ACTOR WolfRocketBase
+{
+	PROJECTILE
+	Radius 4
+	Speed 14
+	SeeSound "missile/fire"
+	DeathSound "missile/hit"
+	States
+	{
+	Spawn:
+		MISL A 1 BRIGHT
+		MISL A 1 BRIGHT A_SpawnItemEx("WolfRocketSmoke", 0, 0, 0)
+		Loop
+	Death:
+		BAL3 CDE 4 BRIGHT A_Explode(16, 32, 1)
+		Stop
+	}
+}
+
+ACTOR WolfRocket : WolfRocketBase
+{
+	DamageType "CastleDamage"
+}
+
 ACTOR CastleFireballBase
 {
 	PROJECTILE
 	+MTHRUSPECIES
 	Radius 4
 	Speed 14
-	DamageType "CastleDamage"
 	States
 	{
 	Spawn:
@@ -177,6 +220,7 @@ ACTOR CastleFireballBase
 
 ACTOR GreenBall : CastleFireballBase
 {
+	DamageType "CastleDamage"
 	SeeSound "king/fire"
 	States
 	{
