@@ -295,7 +295,7 @@ map E2L9 "Floor 9"
 	intermusic = ENDLEVEL
 	sky1 = "SKY1"
 	cluster = 3
-	specialaction = "BernardMontgomery", "ACS_ExecuteAlways", 27, 0	// This is a placeholder for testing
+	specialaction = "Churchill", "ACS_ExecuteAlways", 27, 0
 }
 
 map E2L0 "Secret Floor"
@@ -547,8 +547,8 @@ cluster 5
 		"Stalin, the world's future is going to",
 		"look very different. Aside from a million",
 		"Americans not dying in WW2, generations to",
-		"come will never know the horrors that would",
-		"have been:",
+		"come will never know the horrors that",
+		"would have been:",
 		"",
 		"* No USSR or Cold War",
 		"* No Communist Eastern Europe/Iron Curtain",
@@ -598,6 +598,8 @@ skill baby
 	Key = "C"
 
 	ReplaceActor = "BernardMontgomery", "BernardMontgomeryEasy"
+	ReplaceActor = "MechChurchill", "MechChurchillEasy"
+	ReplaceActor = "Churchill", "ChurchillEasy"
 	ReplaceActor = "KingGeorge", "KingGeorgeEasy"
 	ReplaceActor = "FDR", "FDREasy"
 }
@@ -609,6 +611,8 @@ skill easy
 	Key = "D"
 
 	ReplaceActor = "BernardMontgomery", "BernardMontgomeryNormal"
+	ReplaceActor = "MechChurchill", "MechChurchillNormal"
+	ReplaceActor = "Churchill", "ChurchillNormal"
 	ReplaceActor = "KingGeorge", "KingGeorgeNormal"
 	ReplaceActor = "FDR", "FDRNormal"
 }
@@ -621,6 +625,8 @@ skill normal
 	defaultskill
 
 	ReplaceActor = "BernardMontgomery", "BernardMontgomeryMedium"
+	ReplaceActor = "MechChurchill", "MechChurchillMedium"
+	ReplaceActor = "Churchill", "ChurchillMedium"
 	ReplaceActor = "KingGeorge", "KingGeorgeMedium"
 	ReplaceActor = "FDR", "FDRMedium"
 }
@@ -632,6 +638,8 @@ skill hard
 	Key = "I"
 
 	ReplaceActor = "BernardMontgomery", "BernardMontgomeryHard"
+	ReplaceActor = "MechChurchill", "MechChurchillHard"
+	ReplaceActor = "Churchill", "ChurchillHard"
 	ReplaceActor = "KingGeorge", "KingGeorgeHard"
 	ReplaceActor = "FDR", "FDRHard"
 }

@@ -1,4 +1,5 @@
 *.zds
+*.dbs
 Output/
 ZDoom/zdoom-*.ini
 ZDoom/Screenshot_*.png

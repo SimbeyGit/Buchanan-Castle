@@ -51,6 +51,110 @@ ACTOR BernardMontgomeryNormal : BernardMontgomeryEasy {Health 950}
 ACTOR BernardMontgomeryMedium : BernardMontgomeryEasy {Health 1050}
 ACTOR BernardMontgomeryHard : BernardMontgomeryEasy {Health 1200}
 
+Actor MechChurchill 20178 //20012
+{
+	-SOLID
+	+NOSECTOR
+	RenderStyle None
+	States
+	{
+	Spawn:
+		WCH1 A 0
+		WCH1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 0, "EasySpawn")
+		WCH1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 1, "NormalSpawn")
+		WCH1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 2, "MediumSpawn") 
+		WCH1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 3, "HardSpawn")
+		Stop
+	EasySpawn:
+		WCH1 A 1 A_SpawnItemEx("MechChurchillEasy")
+		Stop
+	NormalSpawn:
+		WCH1 A 1 A_SpawnItemEx("MechChurchillNormal")
+		Stop
+	MediumSpawn:
+		WCH1 A 1 A_SpawnItemEx("MechChurchillMedium")
+		Stop
+	HardSpawn:
+		WCH1 A 1 A_SpawnItemEx("MechChurchillHard")
+		Stop
+	}
+}
+
+ACTOR MechChurchillEasy : CastleBossChurchillMechTemplate
+{
+	Health 425
+	SeeSound "churchill/sight"
+	AttackSound "boss/attack"
+	PainSound "robosuit/walk"
+	DeathSound "churchill/phase2"
+	Obituary "$DTH_MECHCHURCHILL"
+	States
+	{
+	Spawn:
+		WCH1 A 1
+		Goto Spawn.Stand
+	Death:
+		"####" H 5 A_Scream
+		"####" I 5 
+		"####" J 5 A_GiveToTarget("Points", 5000)
+		"####" K 0 ACS_NamedExecuteAlways("A_Drop", 0, 4, angle, user_lost)
+		"####" K 1 A_BossDeath
+		"####" K -1
+		Stop
+	}
+}
+
+ACTOR MechChurchillNormal : MechChurchillEasy {Health 475}
+ACTOR MechChurchillMedium : MechChurchillEasy {Health 525}
+ACTOR MechChurchillHard : MechChurchillEasy {Health 600}
+
+Actor Churchill //20024
+{
+	-SOLID
+	+NOSECTOR
+	RenderStyle None
+	States
+	{
+	Spawn:
+		WCH2 A 0
+		WCH2 A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 0, "EasySpawn")
+		WCH2 A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 1, "NormalSpawn")
+		WCH2 A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 2, "MediumSpawn") 
+		WCH2 A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 3, "HardSpawn")
+		Stop
+	EasySpawn:
+		WCH2 A 1 A_SpawnItemEx("ChurchillEasy")
+		Stop
+	NormalSpawn:
+		WCH2 A 1 A_SpawnItemEx("ChurchillNormal")
+		Stop
+	MediumSpawn:
+		WCH2 A 1 A_SpawnItemEx("ChurchillMedium")
+		Stop
+	HardSpawn:
+		WCH2 A 1 A_SpawnItemEx("ChurchillHard")
+		Stop
+	}
+}
+
+ACTOR ChurchillEasy : CastleBossChurchillTemplate
+{
+	Health 400
+	DeathSound "churchill/death"
+	PainSound "slurpie"
+	Obituary "$DTH_CHURCHILL"
+	States
+	{
+	Spawn:
+		WCH2 A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR ChurchillNormal : ChurchillEasy {Health 475}
+ACTOR ChurchillMedium : ChurchillEasy {Health 525}
+ACTOR ChurchillHard : ChurchillEasy {Health 600}
+
 Actor KingGeorge 20215 //20013
 {
 	-SOLID
@@ -131,6 +235,7 @@ ACTOR FDREasy : CastleBossFDRTemplate
 {
 	Health 850
 	SeeSound "fdr/sight"
+	PainSound "cyber/hoof"
 	DeathSound "fdr/death"
 	Obituary "$DTH_FDR"
 	Damage 4

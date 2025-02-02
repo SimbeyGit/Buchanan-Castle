@@ -131,6 +131,9 @@ churchill/sight			CHURCH2
 churchill/phase2		CHURCH3
 churchill/death			CHURCH4
 
+robosuit/walk			WSND0031
+slurpie				WSND0022
+
 king/sight			GEORGE1
 king/death			GEORGE2
 king/fire			DSKGFIRE

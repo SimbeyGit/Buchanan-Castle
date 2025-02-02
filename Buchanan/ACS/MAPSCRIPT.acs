@@ -177,6 +177,9 @@ Script "A_Drop" (int DropIndex, int Angle, int nUnused)
 	case 3:
 		strDropItem = "RedKey";
 		break;
+	case 4:
+		strDropItem = "Churchill";
+		break;
 	}
 
 	Spawn(strDropItem, x, y, z, 0, Angle);

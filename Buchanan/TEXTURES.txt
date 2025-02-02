@@ -428,6 +428,32 @@ Sprite Optional BERNH0, 64, 64 {Offset 32, 64 Graphic WSPR0304, 0, 0}
 Sprite Optional BERNI0, 64, 64 {Offset 32, 64 Graphic WSPR0305, 0, 0}
 Sprite Optional BERNJ0, 64, 64 {Offset 32, 64 Graphic WSPR0306, 0, 0}
 
+// Mech Churchill
+Sprite Optional WCH1A0, 64, 64 {Offset 32, 64 Graphic WSPR0334, 0, 0}
+Sprite Optional WCH1B0, 64, 64 {Offset 32, 64 Graphic WSPR0335, 0, 0}
+Sprite Optional WCH1C0, 64, 64 {Offset 32, 64 Graphic WSPR0336, 0, 0}
+Sprite Optional WCH1D0, 64, 64 {Offset 32, 64 Graphic WSPR0337, 0, 0}
+Sprite Optional WCH1E0, 64, 64 {Offset 32, 64 Graphic WSPR0338, 0, 0}
+Sprite Optional WCH1F0, 64, 64 {Offset 32, 64 Graphic WSPR0339, 0, 0}
+Sprite Optional WCH1G0, 64, 64 {Offset 32, 64 Graphic WSPR0340, 0, 0}
+Sprite Optional WCH1K0, 64, 64 {Offset 32, 64 Graphic WSPR0341, 0, 0}
+Sprite Optional WCH1H0, 64, 64 {Offset 32, 64 Graphic WSPR0342, 0, 0}
+Sprite Optional WCH1I0, 64, 64 {Offset 32, 64 Graphic WSPR0343, 0, 0}
+Sprite Optional WCH1J0, 64, 64 {Offset 32, 64 Graphic WSPR0344, 0, 0}
+
+// Winston Churchill
+Sprite Optional WCH2A0, 64, 64 {Offset 32, 64 Graphic WSPR0345, 0, 0}
+Sprite Optional WCH2B0, 64, 64 {Offset 32, 64 Graphic WSPR0346, 0, 0}
+Sprite Optional WCH2C0, 64, 64 {Offset 32, 64 Graphic WSPR0347, 0, 0}
+Sprite Optional WCH2D0, 64, 64 {Offset 32, 64 Graphic WSPR0348, 0, 0}
+Sprite Optional WCH2G0, 64, 64 {Offset 32, 64 Graphic WSPR0349, 0, 0}
+Sprite Optional WCH2H0, 64, 64 {Offset 32, 64 Graphic WSPR0350, 0, 0}
+Sprite Optional WCH2I0, 64, 64 {Offset 32, 64 Graphic WSPR0351, 0, 0}
+Sprite Optional WCH2J0, 64, 64 {Offset 32, 64 Graphic WSPR0352, 0, 0}
+Sprite Optional WCH2K0, 64, 64 {Offset 32, 64 Graphic WSPR0353, 0, 0}
+Sprite Optional WCH2L0, 64, 64 {Offset 32, 64 Graphic WSPR0354, 0, 0}
+Sprite Optional WCH2M0, 64, 64 {Offset 32, 64 Graphic WSPR0355, 0, 0}
+
 // King George VI
 Sprite Optional KINGA0, 64, 64 {Offset 32, 64 Graphic WSPR0360, 0, 0}
 Sprite Optional KINGB0, 64, 64 {Offset 32, 64 Graphic WSPR0361, 0, 0}

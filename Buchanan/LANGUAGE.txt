@@ -9,6 +9,8 @@ DTH_KGUARD = "%o was killed by the King's Guard.";
 DTH_SECRETSERVICE = "$o was killed by the Secret Service.";
 DTH_PACMAN = "%o was killed by a Pac-Man ghost.";
 DTH_BERN = "%o was killed by Bernard Montgomery.";
+DTH_MECHCHURCHILL = "%o was killed by Mech Churchill.";
+DTH_CHURCHILL = "%o was killed by Winston Churchill.";
 DTH_KINGGEORGE = "%o was killed by King George VI.";
 DTH_FDR = "%o was killed by FDR.";
 
