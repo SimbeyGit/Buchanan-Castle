@@ -479,15 +479,15 @@ map E3LA "Floor 9 (B)"
 	music = XEVIL
 	next = EndGame
 	{
-		pics = "ENDING3A", "ENDING3B", "ENDING3C", "ENDING3D"
+		pics = "ENDING3A", "ENDING3B", "ENDING3C", "ENDING3D", "ENDING3E"
 		music = BARBGATE
-		time = 15
+		time = 26
 	}
 	par = 120
 	levelnum = 31
 	interpic = INTERPIC
 	intermusic = ENDLEVEL
-	sky1 = "SKY1"
+	sky1 = "SKY3"
 	cluster = 5
 	specialaction = "FDR", "ACS_ExecuteAlways", 27, 0
 }
@@ -541,7 +541,7 @@ cluster 5
 		"in 1940. FDR provoked the Japanese into",
 		"attacking, and allowed the attack to",
 		"proceed, in order to gain support for",
-		"entering the war.",
+		"officially entering the war.",
 		"",
 		"With Britain now joining Germany to defeat",
 		"Stalin, the world's future is going to",
