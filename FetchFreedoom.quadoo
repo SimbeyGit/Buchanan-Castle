@@ -1,0 +1,53 @@
+function LoadModule (strModule)
+{
+	try
+		return Host.LoadQuadoo(strModule);
+	catch
+		return Host.LoadQuadoo("Modules\\" + strModule);
+}
+
+function main ()
+{
+	var strVersion = "0.13.0";	// Update the version if Freedoom's download version changes
+	var strURL = "https://github.com/freedoom/freedoom/releases/download/v" + strVersion + "/freedoom-" + strVersion + ".zip";
+
+	var oZip = LoadModule("QSZIP.dll");
+	var oHttp = LoadModule("QSWinHttp.dll");
+
+	var oOptions = JSONCreateObject();
+	oOptions.agent = "Mozilla/5.0 (Windows NT 10.0; QuadooWeb; rv:1.0) like Gecko";
+	oOptions.method = "GET";
+
+	println("Connecting to Freedoom...");
+	var oResponse = fetch(oHttp, strURL, oOptions);
+
+	println("Downloading Freedoom (" + strVersion + ")...");
+	wait(oResponse, -1);
+
+	if(200 == oResponse.Status)
+	{
+		var oArchive = oZip.OpenBinary(oResponse.ToBinary());
+
+		println("Locating freedoom2.wad");
+		if(oArchive.Locate("freedoom-" + strVersion + "\\freedoom2.wad"))
+		{
+			println("Opening freedoom2.wad");
+			oArchive.Open();
+
+			println("Extracting freedoom2.wad");
+			Host.WriteBinaryFile(oArchive.ReadBinary(oArchive.Size), "ZDoom\\freedoom2.wad");
+
+			println("Saved freedoom2.wad to storage (ZDoom)!");
+		}
+		else
+		{
+			println("Could not find freedoom2.wad!");
+			return -1;
+		}
+	}
+	else
+	{
+		println("Could not download Freedoom!  Status=" + oResponse.Status);
+		return -1;
+	}
+}
