@@ -233,7 +233,7 @@ Actor FDR 20179 //20015
 
 ACTOR FDREasy : CastleBossFDRTemplate
 {
-	Health 900
+	Health 1000
 	SeeSound "fdr/sight"
 	PainSound "cyber/hoof"
 	DeathSound "fdr/death"
@@ -247,6 +247,6 @@ ACTOR FDREasy : CastleBossFDRTemplate
 	}
 }
 
-ACTOR FDRNormal : FDREasy {Health 1000}
-ACTOR FDRMedium : FDREasy {Health 1200}
+ACTOR FDRNormal : FDREasy {Health 1200}
+ACTOR FDRMedium : FDREasy {Health 1300}
 ACTOR FDRHard : FDREasy {Health 1500}
