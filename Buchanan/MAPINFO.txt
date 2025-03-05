@@ -470,7 +470,7 @@ map E3L0 "Secret Floor"
 	levelnum = 30
 	interpic = INTERPIC
 	intermusic = ENDLEVEL
-	sky1 = "SKY1"
+	sky1 = "SKY3"
 	cluster = 4
 }
 
