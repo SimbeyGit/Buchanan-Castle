@@ -1,0 +1,138 @@
+function LoadModule (strModule)
+{
+	try
+		return Host.LoadQuadoo(strModule);
+	catch
+		return Host.LoadQuadoo("Modules\\" + strModule);
+}
+
+function RunToolWithStartDir (oCurrent, strToolExe, strCmdLine, strStartDir)
+{
+	var oTool = Host.CreateProcess(oCurrent.GetPathOf(strToolExe), strCmdLine, strStartDir);
+	oTool.Wait();
+	return oTool.GetExitCode();
+}
+
+function CopyQuadooBinary (strQuadooPath, strFile, oTarget)
+{
+	if(oTarget.IsFile(strFile))
+		oTarget.DeleteFile(strFile);
+	else if(oTarget.IsFile("Modules\\" + strFile))
+		oTarget.DeleteFile("Modules\\" + strFile);
+
+	var oSource = Host.OpenFolder(strQuadooPath);
+	if(oSource.IsFile(strFile))
+		oTarget.CopyHardLink(oSource.GetPathOf(strFile), strFile);
+	else if(oSource.IsFile("Modules\\" + strFile))
+		oTarget.CopyHardLink(oSource.GetPathOf("Modules\\" + strFile), "Modules\\" + strFile);
+}
+
+function PackageFiles (oPackage, strTarget, oSource, aFiles)
+{
+	var cbPackaged = 0;
+	for(int i = 0; i < len(aFiles); i++)
+	{
+		if(0 <= strchr(aFiles[i], '*'))
+		{
+			try
+			{
+				var oEnum = oSource.Find(aFiles[i]);
+				var oPath = Host.OpenFolder(oEnum.Path);
+				do
+				{
+					var strName = oEnum.Name;
+					cbPackaged += oPackage.AddFile(oPath.GetPathOf(strName), strTarget + strName);
+				} while(oEnum.Next());
+			}
+			catch
+			{
+				println("WARNING: Could not find \"" + aFiles[i] + "\" at: " + (string)oSource);
+			}
+		}
+		else
+		{
+			if(!oSource.IsFile(aFiles[i]))
+				println("ERROR: Could not find \"" + aFiles[i] + "\" at: " + (string)oSource);
+			cbPackaged += oPackage.AddFile(oSource.GetPathOf(aFiles[i]), strTarget + aFiles[i]);
+		}
+	}
+	return cbPackaged;
+}
+
+function SizeLabel (cb)
+{
+	var oSB = stringbuilder();
+
+	if(cb < 1024)
+		oSB.Append(cb + " bytes");
+	else
+	{
+		if(cb < 1048576)
+			oSB.Format("%.2f KB", (double)cb / 1024.0);
+		else
+			oSB.Format("%.2f MB", (double)cb / 1048576.0);
+
+		oSB.Append(" (" + cb + " bytes)");
+	}
+
+	return (string)oSB;
+}
+
+function main ()
+{
+	var oFolder = Host.OpenFolder();
+	var oModules = oFolder.CreateFolder("Modules");
+	var oOutput = Host.OpenFolder("..\\Output");
+	var oZDoom = Host.OpenFolder("..\\ZDoom");
+
+	var strQuadooPath = Host.NativeModule;
+	strQuadooPath = left(strQuadooPath, strrchr(strQuadooPath, '\\') + 1);
+
+	if(!oOutput.IsFile("BUCHANAN.pk3"))
+		println("ERROR: Could not find BUCHANAN.pk3!");
+	else if(!oZDoom.IsFile("ZDoom.exe"))
+		println("ERROR: Could not find ZDoom.exe!");
+	else if(!Host.OpenFolder(strQuadooPath).IsFile("CompileQuadoo.exe"))
+		println("ERROR: Could not find CompileQuadoo.exe!");
+	else
+	{
+		if(oFolder.IsFile("Buchanan.exe"))
+			oFolder.DeleteFile("Buchanan.exe");
+
+		println("Compiling Buchanan.wqs into Buchanan.exe");
+		RunToolWithStartDir(oFolder, strQuadooPath + "CompileQuadoo.exe", "/e Buchanan.wqs Buchanan.exe -t \"" + strQuadooPath + "\\WQVMT.bin\" -i Buchanan.ico", (string)oFolder);
+
+		CopyQuadooBinary(strQuadooPath, "SimbeyCore.dll", oFolder);
+		CopyQuadooBinary(strQuadooPath, "JSON.dll", oFolder);
+		CopyQuadooBinary(strQuadooPath, "SimbeyZip.dll", oFolder);
+		CopyQuadooBinary(strQuadooPath, "QuadooVM.dll", oFolder);
+		CopyQuadooBinary(strQuadooPath, "QuadooParser.dll", oFolder);
+		CopyQuadooBinary(strQuadooPath, "QSWinHttp.dll", oFolder);
+		CopyQuadooBinary(strQuadooPath, "QSZIP.dll", oFolder);
+
+		if(oFolder.IsFile("QSWinHttp.dll"))
+			oFolder.MoveFile("QSWinHttp.dll", "Modules\\QSWinHttp.dll");
+		if(oFolder.IsFile("QSZIP.dll"))
+			oFolder.MoveFile("QSZIP.dll", "Modules\\QSZIP.dll");
+
+		if(oFolder.IsFile("BUCHANAN.ZIP"))
+			oFolder.DeleteFile("BUCHANAN.ZIP");
+
+		var cbPackaged = (long)0;
+		var oZIP = LoadModule("QSZIP.dll");
+
+		println("Building BUCHANAN.ZIP");
+		var oPackage = oZIP.OpenWriter(oFolder.GetPathOf("BUCHANAN.ZIP"), "new");
+		cbPackaged += PackageFiles(oPackage, "ZDoom/", oZDoom, { "fmodex.dll", "zdoom.exe", "zdoom.pk3" });
+		cbPackaged += PackageFiles(oPackage, "Modules/", oModules, { "*.dll" });
+		cbPackaged += PackageFiles(oPackage, "", oFolder, { "*.dll", "Buchanan.exe" });
+		cbPackaged += PackageFiles(oPackage, "", oOutput, { "BUCHANAN.pk3" });
+		oPackage = null;
+
+		var cbCompressed = oFolder.GetFileSize("BUCHANAN.ZIP");
+		println("Created: BUCHANAN.ZIP");
+		println("Uncompressed File Size: " + SizeLabel(cbPackaged));
+		println("Compressed File Size: " + SizeLabel(cbCompressed));
+		println("Compression Result: " + stringbuilder().Format("%.2f%%", (double)(cbCompressed * 100) / (double)cbPackaged));
+	}
+}

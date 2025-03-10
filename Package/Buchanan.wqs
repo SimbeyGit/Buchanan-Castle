@@ -1,0 +1,96 @@
+function LoadModule (strModule)
+{
+	try
+		return Host.LoadQuadoo(strModule);
+	catch
+		return Host.LoadQuadoo("Modules\\" + strModule);
+}
+
+function PromptForFreedoom2 (strIWAD)
+{
+	if(Host.MessageBox(Host.Windows.GetDesktopWindow(), "A compatible DOOM 2 IWAD file could not be located.  Would you like to download and use FreeDoom 2?  If you select Yes, it could take a minute to download.", "No DOOM 2 IWAD file found", 0x24) == 6)
+	{
+		var strVersion = "0.13.0";	// Update the version if Freedoom's download version changes
+		var strURL = "https://github.com/freedoom/freedoom/releases/download/v" + strVersion + "/freedoom-" + strVersion + ".zip";
+
+		var oZip = LoadModule("QSZIP.dll");
+		var oHttp = LoadModule("QSWinHttp.dll");
+
+		var oOptions = JSONCreateObject();
+		oOptions.agent = "Mozilla/5.0 (Windows NT 10.0; QuadooWeb; rv:1.0) like Gecko";
+		oOptions.method = "GET";
+
+		var oResponse = fetch(oHttp, strURL, oOptions);
+		wait(oResponse, -1);
+
+		if(200 == oResponse.Status)
+		{
+			var oArchive = oZip.OpenBinary(oResponse.ToBinary());
+
+			if(oArchive.Locate("freedoom-" + strVersion + "\\freedoom2.wad"))
+			{
+				oArchive.Open();
+				strIWAD = Host.OpenFolder().GetPathOf("freedoom2.wad");
+				Host.WriteBinaryFile(oArchive.ReadBinary(oArchive.Size), strIWAD);
+				return true;
+			}
+			else
+				Host.MessageBox(Host.Windows.GetDesktopWindow(), "FreeDoom 2 was not found in the downloaded package!", "Unexpected FreeDoom Package Error", 0x10);
+		}
+		else
+			Host.MessageBox(Host.Windows.GetDesktopWindow(), "The download failed with status " + oResponse.Status, "Download Error", 0x10);
+	}
+
+	return false;
+}
+
+function FindIWAD (strIWAD)
+{
+	if(Host.FileSearch("DOOM2.wad", null, 2, false, ref strIWAD) || Host.FileSearch("ZDoom\\DOOM2.wad", null, 2, false, ref strIWAD))
+		return true;
+
+	if(Host.FileSearch("ZDIWHACK.wad", null, 2, false, ref strIWAD) || Host.FileSearch("ZDoom\\ZDIWHACK.wad", null, 2, false, ref strIWAD))
+		return true;
+
+	if(Host.FileSearch("FREEDOOM2.wad", null, 2, false, ref strIWAD) || Host.FileSearch("ZDoom\\FREEDOOM2.wad", null, 2, false, ref strIWAD))
+		return true;
+
+	if(PromptForFreedoom2(ref strIWAD))
+		return true;
+
+	return false;
+}
+
+function WinMain (strCmdLine, nCmdShow)
+{
+	var strZDoom, strBuchananPK3, strIWAD;
+
+	if(Host.FileSearch("ZDoom.exe", null, 2, false, ref strZDoom) || Host.FileSearch("ZDoom\\ZDoom.exe", null, 2, false, ref strZDoom))
+	{
+		if(Host.FileSearch("Buchanan.pk3", null, 2, false, ref strBuchananPK3) || Host.FileSearch("Output\\Buchanan.pk3", null, 2, false, ref strBuchananPK3))
+		{
+			if(FindIWAD(ref strIWAD))
+			{
+				var strRunCmd = "-iwad \"" + strIWAD + "\" -file \"" + strBuchananPK3 + "\"";
+
+				var idxArgs = instr(strCmdLine, "-args");
+				if(0 <= idxArgs)
+				{
+					idxArgs += 5;
+					strRunCmd += right(strCmdLine, len(strCmdLine) - idxArgs);
+				}
+
+				var oFolder = Host.OpenFolder();
+				var oZDoom = Host.CreateProcess(oFolder.GetPathOf(strZDoom), strRunCmd, (string)oFolder);
+				oZDoom.Wait();
+				return oZDoom.GetExitCode();
+			}
+		}
+		else
+			Host.MessageBox(Host.Windows.GetDesktopWindow(), "Buchanan.pk3 can't be found!", "Missing Buchanan.pk3", 0x10);
+	}
+	else
+		Host.MessageBox(Host.Windows.GetDesktopWindow(), "ZDoom.exe can't be found!", "Missing ZDoom.exe", 0x10);
+
+	return 1;
+}
