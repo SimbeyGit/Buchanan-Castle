@@ -158,7 +158,7 @@ cluster 1
 	entertext = "In an attempt to secure peace, Rudolf Hess",
 		"embarked on a solo mission to Scotland on",
 		"May 10th, 1941. He was captured and",
-		"eventually imprisoned in Buchanan Castle.",
+		"imprisoned briefly at Buchanan Castle.",
 		"Peace negotiations never occurred, and he",
 		"remained imprisoned until his suicide at",
 		"age 93.",

@@ -96,7 +96,10 @@ function main ()
 	}
 
 	if(oOutput.IsFile(strMod + ".pk3"))
+	{
+		println("Deleting previous copy of " + strMod + ".pk3");
 		oOutput.DeleteFile(strMod + ".pk3");
+	}
 	println("Packaging " + strMod + ".pk3");
 
 	var oPackage = oZIP.OpenWriter(oOutput.GetPathOf(strMod + ".pk3"), "new");
