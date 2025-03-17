@@ -61,6 +61,31 @@ function FindIWAD (strIWAD)
 	return false;
 }
 
+function RemoveZoneIdentifiers (oFolder)
+{
+	var oFind = oFolder.Find("*");
+	do
+	{
+		if(oFind.IsFile)
+		{
+			var strZoneIdentifier = oFind.Name + ":Zone.Identifier";
+			if(oFolder.IsFile(strZoneIdentifier))
+				try oFolder.DeleteFile(strZoneIdentifier); catch;
+		}
+	} while(oFind.Next());
+}
+
+function CheckForZoneIdentifiers (strZDoom)
+{
+	var oCurrent = Host.OpenFolder();
+	if(oCurrent.IsFile(strZDoom + ":Zone.Identifier"))
+	{
+		RemoveZoneIdentifiers(Host.OpenFolder(left(strZDoom, strrchr(strZDoom, '\\'))));
+		RemoveZoneIdentifiers(oCurrent.OpenFolder("Modules"));
+		RemoveZoneIdentifiers(oCurrent);
+	}
+}
+
 function WinMain (strCmdLine, nCmdShow)
 {
 	var strZDoom, strBuchananPK3, strIWAD;
@@ -69,6 +94,8 @@ function WinMain (strCmdLine, nCmdShow)
 	{
 		if(Host.FileSearch("Buchanan.pk3", null, 2, false, ref strBuchananPK3) || Host.FileSearch("Output\\Buchanan.pk3", null, 2, false, ref strBuchananPK3))
 		{
+			CheckForZoneIdentifiers(strZDoom);
+
 			if(FindIWAD(ref strIWAD))
 			{
 				var strRunCmd = "-iwad \"" + strIWAD + "\" -file \"" + strBuchananPK3 + "\"";
