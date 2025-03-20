@@ -3,7 +3,8 @@ clearepisodes
 gameinfo
 {
 	windowTitle = "Escape from Buchanan Castle"
-	titlemusic = "NAZI_NOR"
+	titlemusic = "TITLE"
+	loopTitleMusic = true
 }
 
 episode E1L1
