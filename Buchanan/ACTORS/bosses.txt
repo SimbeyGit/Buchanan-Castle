@@ -186,7 +186,7 @@ Actor KingGeorge 20215 //20013
 
 ACTOR KingGeorgeEasy : CastleBossKingGeorgeTemplate
 {
-	Health 850
+	Health 950
 	SeeSound "king/sight"
 	DeathSound "king/death"
 	Obituary "$DTH_KINGGEORGE"
@@ -198,9 +198,9 @@ ACTOR KingGeorgeEasy : CastleBossKingGeorgeTemplate
 	}
 }
 
-ACTOR KingGeorgeNormal : KingGeorgeEasy {Health 950}
-ACTOR KingGeorgeMedium : KingGeorgeEasy {Health 1050}
-ACTOR KingGeorgeHard : KingGeorgeEasy {Health 1200}
+ACTOR KingGeorgeNormal : KingGeorgeEasy {Health 1050}
+ACTOR KingGeorgeMedium : KingGeorgeEasy {Health 1150}
+ACTOR KingGeorgeHard : KingGeorgeEasy {Health 1300}
 
 Actor FDR 20179 //20015
 {
