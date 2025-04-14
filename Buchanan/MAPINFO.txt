@@ -377,12 +377,11 @@ map E3L2 "Floor 2"
 	cluster = 4
 }
 
-map E3L3 "Floor 3"	// Secret Exit
+map E3L3 "Floor 3"
 {
 	music = NAZI_RAP
 	next = E3L4
-	secretnext = E3L0
-	par = 160
+	par = 230
 	levelnum = 23
 	interpic = INTERPIC
 	intermusic = ENDLEVEL
@@ -426,11 +425,12 @@ map E3L6 "Floor 6"
 	cluster = 4
 }
 
-map E3L7 "Floor 7"
+map E3L7 "Floor 7"	// Secret Exit
 {
 	music = XGETYOU
 	next = E3L8
-	par = 180
+	secretnext = E3L0
+	par = 200
 	levelnum = 27
 	interpic = INTERPIC
 	intermusic = ENDLEVEL
