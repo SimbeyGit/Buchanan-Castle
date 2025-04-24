@@ -365,10 +365,11 @@ map E3L1 "Floor 1"
 	cluster = 4
 }
 
-map E3L2 "Floor 2"
+map E3L2 "Floor 2"	// Secret Exit
 {
 	music = INTROCW3
 	next = E3L3
+	secretnext = E3LB
 	par = 220
 	levelnum = 22
 	interpic = INTERPIC
@@ -463,15 +464,16 @@ map E3L9 "Floor 9 (A)"
 	nointermission
 }
 
-map E3L0 "Secret Floor"
+map E3L0 "Secret Floor"	// Secret Exit
 {
 	music = FUNKYOU
-	next = E3L4
+	next = E3L8
+	secretnext = E3LC
 	par = 190
 	levelnum = 30
 	interpic = INTERPIC
 	intermusic = ENDLEVEL
-	sky1 = "SKY3"
+	sky1 = "SKY1"
 	cluster = 4
 }
 
@@ -491,6 +493,30 @@ map E3LA "Floor 9 (B)"
 	sky1 = "SKY3"
 	cluster = 5
 	specialaction = "FDR", "ACS_ExecuteAlways", 27, 0
+}
+
+map E3LB "Secret Orka"
+{
+	music = FUNKYOU
+	next = E3L4
+	par = 190
+	levelnum = 32
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY1"
+	cluster = 4
+}
+
+map E3LC "Super Secret"
+{
+	music = WARMARCH
+	next = E3L8
+	par = 190
+	levelnum = 33
+	interpic = INTERPIC
+	intermusic = ENDLEVEL
+	sky1 = "SKY3"
+	cluster = 4
 }
 
 cluster 4
