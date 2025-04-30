@@ -109,11 +109,14 @@ function main ()
 		CopyQuadooBinary(strQuadooPath, "QuadooParser.dll", oFolder);
 		CopyQuadooBinary(strQuadooPath, "QSWinHttp.dll", oFolder);
 		CopyQuadooBinary(strQuadooPath, "QSZIP.dll", oFolder);
+		CopyQuadooBinary(strQuadooPath, "QSShell.dll", oFolder);
 
 		if(oFolder.IsFile("QSWinHttp.dll"))
 			oFolder.MoveFile("QSWinHttp.dll", "Modules\\QSWinHttp.dll");
 		if(oFolder.IsFile("QSZIP.dll"))
 			oFolder.MoveFile("QSZIP.dll", "Modules\\QSZIP.dll");
+		if(oFolder.IsFile("QSShell.dll"))
+			oFolder.MoveFile("QSShell.dll", "Modules\\QSShell.dll");
 
 		if(oFolder.IsFile("BUCHANAN.ZIP"))
 			oFolder.DeleteFile("BUCHANAN.ZIP");

@@ -6,6 +6,44 @@ function LoadModule (strModule)
 		return Host.LoadQuadoo("Modules\\" + strModule);
 }
 
+function ProgressDownloadModal (strTitle, oHttp, strURL, oOptions)
+{
+	var oResponse, oShell;
+
+	try oShell = LoadModule("QSShell.dll"); catch;
+
+	if(oShell)
+	{
+		var oMonitors = oShell.OpenMonitors();
+		var oMap = new map<string>;
+		var oPump = Host.CreateMessagePump();
+
+		var oMonitor = oMonitors[0];
+		var oRect = oMonitor.Work;
+		oRect.left = oRect.right - 250;
+		oRect.top = oRect.bottom - 80;
+		oRect.right -= 10;
+		oRect.bottom -= 10;
+
+		var oProgress = oShell.CreateProgress(null, oRect);
+		oMap.Add("status", oProgress);
+
+		oResponse = fetch(oHttp, strURL, oOptions, oMap);
+		oProgress.Caption = strTitle;
+		oProgress.SetTopMost();
+
+		doevents(oPump, oResponse, -1);
+		oProgress.Close();
+	}
+	else
+	{
+		oResponse = fetch(oHttp, strURL, oOptions);
+		wait(oResponse, -1);
+	}
+
+	return oResponse;
+}
+
 function PromptForFreedoom2 (strIWAD)
 {
 	if(Host.MessageBox(Host.Windows.GetDesktopWindow(), "A compatible DOOM 2 IWAD file could not be located.  Would you like to download and use FreeDoom 2?  If you select Yes, it could take a minute to download.", "No DOOM 2 IWAD file found", 0x24) == 6)
@@ -20,8 +58,7 @@ function PromptForFreedoom2 (strIWAD)
 		oOptions.agent = "Mozilla/5.0 (Windows NT 10.0; QuadooWeb; rv:1.0) like Gecko";
 		oOptions.method = "GET";
 
-		var oResponse = fetch(oHttp, strURL, oOptions);
-		wait(oResponse, -1);
+		var oResponse = ProgressDownloadModal("Downloading Freedoom " + strVersion, oHttp, strURL, oOptions);
 
 		if(200 == oResponse.Status)
 		{
