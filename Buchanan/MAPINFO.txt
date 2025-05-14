@@ -497,7 +497,7 @@ map E3LA "Floor 9 (B)"
 
 map E3LB "Secret Orka"
 {
-	music = FUNKYOU
+	music = TOTHEPIT
 	next = E3L4
 	par = 190
 	levelnum = 32
