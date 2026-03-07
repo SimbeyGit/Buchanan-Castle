@@ -13,3 +13,4 @@ How to build and play:
 
 4)	Run Buchanan.wqs (QuadooScript Windows script)
 
+![Rudolf Hess parachuted out of the plane on his way to meet the Duke of Hamilton](Buchanan/GRAPHICS/CREDIT.png)
