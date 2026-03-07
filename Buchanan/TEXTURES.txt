@@ -43,17 +43,17 @@ Sprite Optional COL2A0, 64, 64 {Offset 32, 64 Graphic WSPR1050, 0, 0}
 Sprite Optional WTRKA0, 64, 64 {Offset 32, 64 Graphic WSPR1052, 0, 0}
 Sprite Optional PLT3A0, 64, 64 {Offset 32, 64 Graphic WSPR2010, 0, 0}
 
-Sprite Optional MGUNB0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0426, 0, 0}
-Sprite Optional MGUNC0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0427, 0, 0}
-Sprite Optional MGUND0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0428, 0, 0}
-Sprite Optional MGUNE0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0429, 0, 0}
-Sprite Optional MGUNW0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0430, 0, 0}
+Sprite MGUNB0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0426, 0, 0}
+Sprite MGUNC0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0427, 0, 0}
+Sprite MGUND0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0428, 0, 0}
+Sprite MGUNE0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0429, 0, 0}
+Sprite MGUNW0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0430, 0, 0}
 
-Sprite Optional CGUNA0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0431, 0, 0}
-Sprite Optional CGUNB0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0432, 0, 0}
-Sprite Optional CGUNC0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0433, 0, 0}
-Sprite Optional CGUND0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0434, 0, 0}
-Sprite Optional CGUNE0, 64, 64 {Offset -32, 0 XScale 0.4 YScale 0.4 Graphic WSPR0435, 0, 0}
+Sprite CGUNA0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0431, 0, 0}
+Sprite CGUNB0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0432, 0, 0}
+Sprite CGUNC0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0433, 0, 0}
+Sprite CGUND0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0434, 0, 0}
+Sprite CGUNE0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0435, 0, 0}
 
 // Dog/Alsatian
 Sprite Optional WDOGA1, 64, 64 {Offset 32, 64 Graphic WSPR0099, 0, 0}
