@@ -82,7 +82,7 @@ Actor MechChurchill 20178 //20012
 
 ACTOR MechChurchillEasy : CastleBossChurchillMechTemplate
 {
-	Health 425
+	Health 450
 	SeeSound "churchill/sight"
 	AttackSound "boss/attack"
 	PainSound "robosuit/walk"
@@ -104,9 +104,9 @@ ACTOR MechChurchillEasy : CastleBossChurchillMechTemplate
 	}
 }
 
-ACTOR MechChurchillNormal : MechChurchillEasy {Health 475}
-ACTOR MechChurchillMedium : MechChurchillEasy {Health 525}
-ACTOR MechChurchillHard : MechChurchillEasy {Health 600}
+ACTOR MechChurchillNormal : MechChurchillEasy {Health 500}
+ACTOR MechChurchillMedium : MechChurchillEasy {Health 550}
+ACTOR MechChurchillHard : MechChurchillEasy {Health 650}
 
 Actor Churchill //20024
 {

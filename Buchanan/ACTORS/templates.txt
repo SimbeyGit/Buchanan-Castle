@@ -443,6 +443,49 @@ ACTOR SecretServiceTemplate : CastlePoliceTemplate
 	}
 }
 
+Actor StrakoschPuppetTemplate : CastleEnemy
+{
+	Health 250
+	Speed 4
+	Painchance 0
+	+NOGRAVITY
+	+DROPOFF
+	+SPAWNFLOAT
+	+FLOAT
+	+NORADIUSDMG
+	+AMBUSH
+	+LOOKALLAROUND
+	+BOSS
+	States
+	{
+	Spawn:
+		UNKN A 0
+	Spawn.Stand:
+		"####" A 5 A_Look
+		Loop
+	Chase:
+		"####" AAAAA 1 A_Chase
+		"####" A 1
+		"####" BBBB 1 A_Chase
+		"####" CCCCC 1 A_Chase
+		"####" CC 1
+		"####" DDDD 1 A_Chase
+		Loop
+	Missile:
+		"####" E 4 A_FaceTarget
+		"####" EEEEEEEE 4 BRIGHT A_CustomMissile ("GhostFireBall", 30, 0, 0)
+		Goto Chase
+	Death:
+		"####" F 5
+		"####" G 5 A_Scream
+		"####" HI 5
+		"####" J 5 A_GiveToTarget("Points", 2000)
+	Dead:
+		"####" K -1
+		Stop
+	}
+}
+
 ACTOR PacManGhostTemplate : CastleEnemy
 {
 	Radius 32

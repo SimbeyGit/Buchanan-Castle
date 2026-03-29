@@ -161,6 +161,54 @@ ACTOR MSecretService : SecretService 20208
 	}
 }
 
+Actor StrakoschPuppet 20160
+{
+	-SOLID
+	+NOSECTOR
+	RenderStyle None
+	States
+	{
+	Spawn:
+		PUPT A 0
+		PUPT A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 0, "EasySpawn")
+		PUPT A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 1, "NormalSpawn")
+		PUPT A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 2, "MediumSpawn") 
+		PUPT A 0 A_JumpIf(ACS_NamedExecuteWithResult("A_GetSkill") == 3, "HardSpawn")
+		Stop
+	EasySpawn:
+		PUPT A 1 A_SpawnItemEx("StrakoschPuppetEasy")
+		Stop
+	NormalSpawn:
+		PUPT A 1 A_SpawnItemEx("StrakoschPuppetNormal")
+		Stop
+	MediumSpawn:
+		PUPT A 1 A_SpawnItemEx("StrakoschPuppetMedium")
+		Stop
+	HardSpawn:
+		PUPT A 1 A_SpawnItemEx("StrakoschPuppetHard")
+		Stop
+	}
+}
+
+ACTOR StrakoschPuppetEasy : StrakoschPuppetTemplate
+{
+	SeeSound "strakosch/sight"
+	AttackSound ""
+	DeathSound "strakosch/death"
+	Obituary "$DTH_STRAKOSCH"
+	BloodColor "00 00 00"
+	States
+	{
+	Spawn:
+		PUPT A 0
+		Goto Spawn.Stand
+	}
+}
+
+ACTOR StrakoschPuppetNormal : StrakoschPuppetEasy {Health 300}
+ACTOR StrakoschPuppetMedium : StrakoschPuppetEasy {Health 400}
+ACTOR StrakoschPuppetHard : StrakoschPuppetEasy {Health 500}
+
 ACTOR Blinky : PacManGhostTemplate 20224 //20020
 {
 	States

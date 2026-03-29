@@ -116,6 +116,9 @@ $random usss/sight		{ usss/sight1 usss/sight2 usss/sight3 }
 $random usss/pain		{ usss/pain1 usss/pain2 }
 $random usss/death		{ usss/die1 usss/die2 usss/die3 }
 
+strakosch/sight			STRKSCH1
+strakosch/death			STRKSCH2
+
 bern/sight			BERNARD1
 bern/death			BERNARD2
 
@@ -133,6 +136,8 @@ churchill/death			CHURCH4
 
 robosuit/walk			WSND0031
 slurpie				WSND0022
+
+flame/fire			DSFLAME
 
 king/sight			GEORGE1
 king/death			GEORGE2

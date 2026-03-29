@@ -43,11 +43,11 @@ Sprite Optional COL2A0, 64, 64 {Offset 32, 64 Graphic WSPR1050, 0, 0}
 Sprite Optional WTRKA0, 64, 64 {Offset 32, 64 Graphic WSPR1052, 0, 0}
 Sprite Optional PLT3A0, 64, 64 {Offset 32, 64 Graphic WSPR2010, 0, 0}
 
-Sprite MGUNB0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0426, 0, 0}
-Sprite MGUNC0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0427, 0, 0}
-Sprite MGUND0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0428, 0, 0}
-Sprite MGUNE0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0429, 0, 0}
-Sprite MGUNW0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0430, 0, 0}
+Sprite MGUNB0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic STEN0426, 0, 0}
+Sprite MGUNC0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic STEN0427, 0, 0}
+Sprite MGUND0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic STEN0428, 0, 0}
+Sprite MGUNE0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic STEN0429, 0, 0}
+Sprite MGUNW0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic STEN0430, 0, 0}
 
 Sprite CGUNA0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0431, 0, 0}
 Sprite CGUNB0, 128, 128 {Offset -96, -32 XScale 1.0 YScale 1.0 Graphic WSPR0432, 0, 0}
@@ -404,6 +404,22 @@ Sprite Optional USSSN0, 64, 64 {Offset 32, 64 Graphic WSPR3479, 0, 0}
 Sprite Optional USSSG0, 64, 64 {Offset 32, 64 Graphic WSPR3480, 0, 0}
 Sprite Optional USSSH0, 64, 64 {Offset 32, 64 Graphic WSPR3481, 0, 0}
 Sprite Optional USSSI0, 64, 64 {Offset 32, 64 Graphic WSPR3482, 0, 0}
+
+// Henry Strakosh Puppet
+Sprite Optional PUPTA0, 64, 64 {Offset 32, 64 Graphic WSPR0321, 0, 0}
+Sprite Optional PUPTB0, 64, 64 {Offset 32, 64 Graphic WSPR0322, 0, 0}
+Sprite Optional PUPTC0, 64, 64 {Offset 32, 64 Graphic WSPR0323, 0, 0}
+Sprite Optional PUPTD0, 64, 64 {Offset 32, 64 Graphic WSPR0324, 0, 0}
+Sprite Optional PUPTE0, 64, 64 {Offset 32, 64 Graphic WSPR0325, 0, 0}
+Sprite Optional PUPTF0, 64, 64 {Offset 32, 64 Graphic WSPR0328, 0, 0}
+Sprite Optional PUPTG0, 64, 64 {Offset 32, 64 Graphic WSPR0329, 0, 0}
+Sprite Optional PUPTH0, 64, 64 {Offset 32, 64 Graphic WSPR0330, 0, 0}
+Sprite Optional PUPTI0, 64, 64 {Offset 32, 64 Graphic WSPR0331, 0, 0}
+Sprite Optional PUPTJ0, 64, 64 {Offset 32, 64 Graphic WSPR0332, 0, 0}
+Sprite Optional PUPTK0, 64, 64 {Offset 32, 64 Graphic WSPR0333, 0, 0}
+
+Sprite Optional BAL3A0, 64, 64 {Offset 32, 32 Graphic WSPR0326, 0, 0}
+Sprite Optional BAL3B0, 64, 64 {Offset 32, 32 Graphic WSPR0327, 0, 0}
 
 // Pac Man
 Sprite Optional GHO1A0, 64, 64 {Offset 32, 64 Graphic WSPR0288, 0, 0}

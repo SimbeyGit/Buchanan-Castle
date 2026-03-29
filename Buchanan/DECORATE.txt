@@ -229,6 +229,29 @@ ACTOR GreenBall : CastleFireballBase
 	}
 }
 
+ACTOR GhostFireBallBase
+{
+	PROJECTILE
+	+MTHRUSPECIES
+	Radius 4
+	Speed 8
+	SeeSound "flame/fire"
+	States
+	{
+		Spawn:
+			BAL3 AB 4 BRIGHT
+			Loop
+		Death:
+			BAL3 A 0 BRIGHT A_Explode (16, 16, 1)
+			Stop
+	}
+}
+
+ACTOR GhostFireball : GhostFireballBase
+{
+	DamageType "CastleDamage"
+}
+
 #include "actors/miscellaneous.txt"
 #include "actors/weapons.txt"
 #include "actors/templates.txt"
