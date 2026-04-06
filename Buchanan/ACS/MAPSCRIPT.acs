@@ -129,6 +129,14 @@ script 2 (int po, int dirEnd, int dist)
 	polyinfo[po - 1] = FALSE;
 }
 
+script 3 (int idConv, int nAngle)
+{
+	// The Block Map Editor defines three "story point" map features.
+	// Set your conversation IDs to 100, 101, and 102 to connect with them.
+	// Miscellaneous.txt defines decorative "actors" beginning with 21063.
+	DisplayDialogue(idConv, 21063 + (idConv - 100), nAngle);
+}
+
 Script "SetMapMarker" (int ActorType)
 {
 }

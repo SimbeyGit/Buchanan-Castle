@@ -26,6 +26,8 @@ Sprite Optional POT2A0, 64, 64 {Offset 32, 64 Graphic WSPR0046, 0, 0}
 Sprite Optional STOVA0, 64, 64 {Offset 32, 64 Graphic WSPR0047, 0, 0}
 Sprite Optional SPEAA0, 64, 64 {Offset 32, 64 Graphic WSPR0048, 0, 0}
 Sprite Optional VINEA0, 64, 64 {Offset 32, 64 Graphic WSPR0049, 0, 0}
+Sprite Optional AARDA0, 64, 64 {Offset 32, 64 Graphic WSPR1401, 0, 0}
+Sprite Optional BLPDA0, 64, 64 {Offset 32, 64 Graphic WSPR1402, 0, 0}
 
 Sprite Optional CRWNA0, 64, 64 {Offset 32, 64 Graphic WSPR0034, 0, 0}
 

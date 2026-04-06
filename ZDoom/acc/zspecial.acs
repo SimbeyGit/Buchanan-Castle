@@ -430,6 +430,7 @@ special
 	-213:GetLineHealth(1),
 
 	-250:SetActivatorToPlayer(1),	// Buchanan Castle mod enhancement
+	-251:DisplayDialogue(3),	// Buchanan Castle mod enhancement
 
 	// Eternity's
 	-300:GetLineX(3),

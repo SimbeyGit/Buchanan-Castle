@@ -455,3 +455,25 @@ ACTOR RoyalCrown : CustomInventory 21174
 		Stop
 	}
 }
+
+ACTOR AardwolfSign : BaseDecoration 21063
+{
+	Height 64
+	States
+	{
+	Static:
+		AARD A -1
+		Stop
+	}
+}
+
+ACTOR BlackPilled : BaseDecoration 21064
+{
+	Height 64
+	States
+	{
+	Static:
+		BLPD A -1
+		Stop
+	}
+}
